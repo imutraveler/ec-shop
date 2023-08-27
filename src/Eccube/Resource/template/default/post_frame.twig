@@ -1,73 +1,78 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	
-	<!--
-    <meta name="viewport"
-	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-	-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="eccube-csrf-token" content="{{ csrf_token(constant('Eccube\\Common\\Constant::TOKEN_NAME')) }}">
-    <title>{{post.post_title}}</title>
-  
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMD0H04D6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="utf-8">
 
-  gtag('config', 'G-JTMD0H04D6');
-</script>
+    <!--
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="eccube-csrf-token" content="{{ csrf_token(constant('Eccube\\Common\\Constant::TOKEN_NAME')) }}">
+    <title>{{ post.post_title }}</title>
+
+    {# <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMD0H04D6"></script> #}
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-JTMD0H04D6');
+    </script>
 
     {% if Page.author is not empty %}
         <meta name="author" content="{{ Page.author }}">
     {% endif %}
-     {% if description is not empty %}
-     <meta name="description" content="{{description}}">
-     {% endif %}
-     {% if keyword is not empty %}
+    {% if description is not empty %}
+        <meta name="description" content="{{ description }}">
+    {% endif %}
+    {% if keyword is not empty %}
         <meta name="keywords" content="{{ keyword }}">
     {% endif %}
-     <!--
+    <!--
     {% if Page.keyword is not empty %}
         <meta name="keywords" content="{{ Page.keyword }}">
     {% endif %}
     -->
-    
+
     {% if Page.meta_tags is not empty %}
         {{ include(template_from_string(Page.meta_tags)) }}
     {% endif %}
-     {# my css #}
-     
-   
+    {# my css #}
+
+
     <!--<link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/swiper.min.css') }}" />
     -->
-   
+
     <!--之前的样式-->
-     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-     <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
-		<link rel="stylesheet" href="{{ asset('assets/my/css/custom.css') }}">
-		<link rel="stylesheet" href="{{ asset('assets/my/css/style.css') }}">
-		<link rel="stylesheet" href="{{ asset('assets/css/product_style.css') }}">
-		
-		<link rel="stylesheet" href="{{ asset('assets/my/css/responsive/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/my/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/my/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/product_style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/my/css/responsive/responsive.css') }}">
     <!--之前的样式-->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/font.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/font.css') }}"/>
     <script charset="utf-8" type="text/javascript" src="{{ asset('assets/my/js/jquery-2.2.4.min.js') }}"></script>
-     <script src="{{ asset('assets/js/jquery.twbsPagination.js')}}"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="{{ asset('assets/js/jquery.twbsPagination.js') }}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/wordpress/style.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/wordpress/themes/lionblog/content.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/wordpress/themes/lionblog/css.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/wordpress/themes/lionblog/icon.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/wordpress/themes/lionblog/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/emphasize_link.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}" />
-	 {% block stylesheet %}{% endblock %}
+    <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}"/>
+    {% block stylesheet %}{% endblock %}
     <script>
-        $(function() {
+        $(function () {
             $.ajaxSetup({
                 'headers': {
                     'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')
@@ -82,24 +87,25 @@
     {# プラグイン用styleseetやmetatagなど #}
     {% if plugin_assets is defined %}{{ include('@admin/snippet.twig', { snippets: plugin_assets }) }}{% endif %}
 </head>
-<body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}" itemscope  itemtype="https://schema.org/WebPage">
-  <!--
-  <div id="preloader">
-        <div class="loader">
-            <span class="inner1"></span>
-            <span class="inner2"></span>
-            <span class="inner3"></span>
-        </div>
-    </div>
-    -->
-    {# Layout: BODY_AFTER #}
-    {% if Layout.BodyAfter %}
-        {{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
-    {% endif %}
-    {% if Layout.Header %}
-        {{ include('block.twig', {'Blocks': Layout.Header}) }}
-    {% endif %}
-    <section class="fancy-testimonials-area section-padding-120" style="background-color:#fff;margin-top:30px;">
+<body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}" itemscope
+      itemtype="https://schema.org/WebPage">
+<!--
+<div id="preloader">
+      <div class="loader">
+          <span class="inner1"></span>
+          <span class="inner2"></span>
+          <span class="inner3"></span>
+      </div>
+  </div>
+  -->
+{# Layout: BODY_AFTER #}
+{% if Layout.BodyAfter %}
+    {{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
+{% endif %}
+{% if Layout.Header %}
+    {{ include('block.twig', {'Blocks': Layout.Header}) }}
+{% endif %}
+<section class="fancy-testimonials-area section-padding-120" style="background-color:#fff;margin-top:30px;">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -143,15 +149,15 @@
                 {% if Layout.ContentsBottom %}
                     {{ include('block.twig', {'Blocks': Layout.ContentsBottom}) }}
                 {% endif %}
-                </div>
             </div>
         </div>
-    </section>
-    {# Layout: CONTENTS_FOOTER #}
-    {% if Layout.Footer %}
+    </div>
+</section>
+{# Layout: CONTENTS_FOOTER #}
+{% if Layout.Footer %}
     {{ include('block.twig', {'Blocks': Layout.Footer}) }}
-    {% endif %}
-                    
+{% endif %}
+
 
 {% include('@common/lang.twig') %}
 {# Layout: CLOSE_BODY_BEFORE #}
@@ -162,9 +168,9 @@
 {% if plugin_snippets is defined %}
     {{ include('snippet.twig', { snippets: plugin_snippets }) }}
 {% endif %}
- <script src="{{ asset('assets/my/js/bootstrap/popper.min.js')}}"></script>
-    <script src="{{ asset('assets/my/js/bootstrap/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('assets/my/js/others/plugins.js')}}"></script>
-    <script src="{{ asset('assets/my/js/active.js')}}"></script>
+<script src="{{ asset('assets/my/js/bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('assets/my/js/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/my/js/others/plugins.js') }}"></script>
+<script src="{{ asset('assets/my/js/active.js') }}"></script>
 </body>
 </html>

@@ -1,60 +1,67 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	
-<!--
-   <meta name="viewport"
-	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-	-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="eccube-csrf-token" content="{{ csrf_token(constant('Eccube\\Common\\Constant::TOKEN_NAME')) }}">
-    <title>{{Product.title}}|{{ BaseInfo.shop_name }}</title>
- <!-- Global site tag (gtag.js) - Google Analytics -->
- 
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMD0H04D6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="utf-8">
 
-  gtag('config', 'G-JTMD0H04D6');
-</script>
+    <!--
+       <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="eccube-csrf-token" content="{{ csrf_token(constant('Eccube\\Common\\Constant::TOKEN_NAME')) }}">
+    <title>{{ Product.title }}|{{ BaseInfo.shop_name }}</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    {# <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMD0H04D6"></script> #}
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-JTMD0H04D6');
+    </script>
 
     {% if Page.author is not empty %}
         <meta name="author" content="{{ Page.author }}">
     {% endif %}
-    
-        <meta name="description" content="{{Product.keyword}}|{{ BaseInfo.shop_name }}">  
-        
-        <meta name="keywords" content="{{Product.search_word}}|{{ BaseInfo.shop_name }}">
-        
-   
+
+    <meta name="description" content="{{ Product.keyword }}|{{ BaseInfo.shop_name }}">
+
+    <meta name="keywords" content="{{ Product.search_word }}|{{ BaseInfo.shop_name }}">
+
+
     {% if Page.meta_robots is not empty %}
         <meta name="robots" content="{{ Page.meta_robots }}">
     {% endif %}
     {% if Page.meta_tags is not empty %}
         {{ include(template_from_string(Page.meta_tags)) }}
     {% endif %}
-        {# my css #}
-	<link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/swiper.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/product_style.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/font.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/review.css') }}"/>
-	 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<script charset="utf-8" type="text/javascript" src="{{ asset('assets/js/jquery.min_1.10.js') }}"></script>
-<script charset="utf-8" type="text/javascript" src="{{ asset('assets/js/fixedScroll.js') }}"></script>
+    {# my css #}
+    <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/swiper.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/product_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/font.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/review.css') }}"/>
 
-{% block stylesheet %}{% endblock %}
-    
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+          as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+    <script charset="utf-8" type="text/javascript" src="{{ asset('assets/js/jquery.min_1.10.js') }}"></script>
+    <script charset="utf-8" type="text/javascript" src="{{ asset('assets/js/fixedScroll.js') }}"></script>
+
+    {% block stylesheet %}{% endblock %}
+
     <script>
-        $(function() {
+        $(function () {
             $.ajaxSetup({
                 'headers': {
                     'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')
@@ -68,9 +75,10 @@
     {% endif %}
     {# プラグイン用styleseetやmetatagなど #}
     {% if plugin_assets is defined %}{{ include('@admin/snippet.twig', { snippets: plugin_assets }) }}{% endif %}
-     <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}"/>
 </head>
-<body id="page_{{ app.request.get('_route') }}" style="background-color: #ffffff" class="{{ body_class|default('other_page') }}">
+<body id="page_{{ app.request.get('_route') }}" style="background-color: #ffffff"
+      class="{{ body_class|default('other_page') }}">
 <!--
 <div id="preloader">
         <div class="loader">
@@ -84,13 +92,13 @@
 {% if Layout.BodyAfter %}
     {{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
 {% endif %}
- {# Layout: HEADER #}
-    {% if Layout.Header %}
-            {{ include('block.twig', {'Blocks': Layout.Header}) }}
-    {% endif %}
+{# Layout: HEADER #}
+{% if Layout.Header %}
+    {{ include('block.twig', {'Blocks': Layout.Header}) }}
+{% endif %}
 
-    <div id="contents" class="theme_main_only" style="min-height:850px;" itemscope="" itemtype="http://schema.org/Product">
-   
+<div id="contents" class="theme_main_only" style="min-height:850px;" itemscope="" itemtype="http://schema.org/Product">
+
 
     {# Layout: CONTENTS_TOP #}
     {% if Layout.ContentsTop %}
@@ -109,22 +117,22 @@
         {% set layoutRoleMain = 'ec-layoutRole__mainBetweenColumn' %}
     {% endif %}
 
-     {# Layout: MAIN_TOP #}
-        {% if Layout.MainTop %}
-            <div class="ec-layoutRole__mainTop">
-                {{ include('block.twig', {'Blocks': Layout.MainTop}) }}
-            </div>
-        {% endif %}
+    {# Layout: MAIN_TOP #}
+    {% if Layout.MainTop %}
+        <div class="ec-layoutRole__mainTop">
+            {{ include('block.twig', {'Blocks': Layout.MainTop}) }}
+        </div>
+    {% endif %}
 
-        {# MAIN AREA #}
-        {% block main %}{% endblock %}
+    {# MAIN AREA #}
+    {% block main %}{% endblock %}
 
-        {# Layout: MAIN_Bottom #}
-        {% if Layout.MainBottom %}
-            <div class="ec-layoutRole__mainBottom">
-                {{ include('block.twig', {'Blocks': Layout.MainBottom}) }}
-            </div>
-        {% endif %}
+    {# Layout: MAIN_Bottom #}
+    {% if Layout.MainBottom %}
+        <div class="ec-layoutRole__mainBottom">
+            {{ include('block.twig', {'Blocks': Layout.MainBottom}) }}
+        </div>
+    {% endif %}
 
     {# Layout: SIDE_RIGHT #}
     {% if Layout.SideRight %}
@@ -140,7 +148,7 @@
     {% endif %}
 
     {# Layout: CONTENTS_FOOTER #}
-   
+
 </div>
 
 
@@ -148,12 +156,12 @@
 {% if plugin_snippets is defined %}
     {{ include('snippet.twig', { snippets: plugin_snippets }) }}
 {% endif %}
- {% if Layout.Footer %}
-        {# <div class="ec-layoutRole__footer"> #}
-            {{ include('block.twig', {'Blocks': Layout.Footer}) }}
-        {# </div> #}
-    {% endif %}
-<div class="ec-blockTopBtn pagetop">{{'ページトップへ'|trans}}</div>
+{% if Layout.Footer %}
+    {# <div class="ec-layoutRole__footer"> #}
+    {{ include('block.twig', {'Blocks': Layout.Footer}) }}
+    {# </div> #}
+{% endif %}
+<div class="ec-blockTopBtn pagetop">{{ 'ページトップへ'|trans }}</div>
 {# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> #}
 {% include('@common/lang.twig') %}
@@ -165,9 +173,9 @@
 {% if Layout.CloseBodyBefore %}
     {{ include('block.twig', {'Blocks': Layout.CloseBodyBefore}) }}
 {% endif %}
-	<script src="{{ asset('assets/my/js/swiper.min.js') }}" type="text/javascript" charset="utf-8"></script>
-	<script src="{{ asset('assets/my/js/jquery.SuperSlide.2.1.3.js') }}" type="text/javascript" charset="utf-8"></script>
-	<script src="{{ asset('assets/js/jquery.twbsPagination.js') }}" type="text/javascript" charset="utf-8"></script>
-	
+<script src="{{ asset('assets/my/js/swiper.min.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('assets/my/js/jquery.SuperSlide.2.1.3.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('assets/js/jquery.twbsPagination.js') }}" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>
