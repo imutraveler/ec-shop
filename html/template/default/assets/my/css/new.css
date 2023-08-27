@@ -208,3 +208,34 @@ h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2 {
 .label-popular.menu-item > a:after {
     content: "Popular";
 }
+
+/* ========== traveler. 2023-08-27 ========== */
+#header .container {
+    margin-top: 0;
+}
+
+.cart_item a img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.cart_item .badge {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding: 5px 8px;
+    margin-left: 5px;
+    color: #fff;
+    background-color: #ED7424;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.menu-item > .is-active {
+    background-color: transparent;
+}

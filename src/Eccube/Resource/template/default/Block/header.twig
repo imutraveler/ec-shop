@@ -2,104 +2,175 @@
 Reserved. http://www.lockon.co.jp/ For the full copyright and license
 information, please view the LICENSE file that was distributed with this
 source code. #} {% set Carts = get_all_carts() %} {% set totalPrice =
-get_carts_total_price() %} {% set totalQuantity =
-get_carts_total_quantity() %}
+    get_carts_total_price() %} {% set totalQuantity =
+    get_carts_total_quantity() %}
 <!-- 头部导航 -->
-<header id="header">
-	<div class="container-fluid">
-		<div class="head-inner">
-			<div class="left-side">
-				<div class="logo visible-pc">
-					<a href="#"><img alt="logo" style="width: 100%;" title="logo" src="{{ asset('assets/my/images/logo.png') }}"></a>
-				</div>
-			</div>
-			<div class="right-side">
-				<div class="navigation visible-pc" style="display: inline-block;">
-					<ul>
-						<li class="navigation_one"><a
-									class="{{ app.request.attributes.get('_route') == 'homepage' ? 'is-active': ''}}"
-									href="{{ url('homepage') }}">ホーム</a></li>
-						<li class="navigation_one"><a
-									class="{{ app.request.attributes.get('_route') == 'help_about' ? 'is-active': ''}}"
-									href="{{ url('help_about') }}">会社概要</a></li>
-						<li class="navigation_one"><a
-									class="{{ app.request.attributes.get('_route') == 'contact' ? 'is-active': ''}}"
-									href="{{ url('contact') }}">お問い合わせ</a></li>
-						<li class="navigation_one"><a
-									class="{{ app.request.attributes.get('_route') == 'post_lists' ? 'is-active': ''}}"
-									href=" {{ url('post_lists') }} ">Blog</a>
-						</li>
-						<li class="navigation_one"><a
-									class="{{ app.request.attributes.get('_route') == 'mypage_login' ? 'is-active': ''}}"
-									href=" {{ url('mypage_login') }} ">ログイン</a>
-						</li>
+<header id="header" class="header has-sticky sticky-jump">
+    <div class="header-wrapper">
+        <div id="top-bar" class="header-top hide-for-sticky nav-dark">
+            <div class="flex-row container">
+                <div class="flex-col hide-for-medium flex-left">
+                    <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
+                        <li class="html custom html_topbar_left">
+                            <strong class="uppercase">✈ 1/3時間以内に迅速に出荷</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-col hide-for-medium flex-center">
+                    <ul class="nav nav-center nav-small  nav-divided">
+                    </ul>
+                </div>
+                <div class="flex-col hide-for-medium flex-right">
+                    <ul class="nav top-bar-nav nav-right nav-small  nav-divided">
+                        <li id="menu-item-543"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-543 menu-item-design-default">
+                            <a href="/about" class="nav-top-link">当サイトについて</a>
+                        </li>
+                        <li id="menu-item-527"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-527 menu-item-design-default">
+                            <a href="/contact" class="nav-top-link">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-col show-for-medium flex-grow">
+                    <ul class="nav nav-center nav-small mobile-nav  nav-divided">
+                        <li class="html custom html_topbar_left">
+                            <strong class="uppercase">✈ 1/3時間以内に迅速に出荷</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="masthead" class="header-main ">
+            <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+                <div id="logo" class="flex-col logo">
+                    <a href="/" title="DIGITALWEBWIKI - DIGITALWEBWIKI" rel="home">
+                        <img width="1020" height="265"
+                             src="https://digitalwebwiki.com/wp-content/uploads/2023/01/Digitalwebwiki-1400x364.png"
+                             class="header_logo header-logo" alt="DIGITALWEBWIKI">
+                        <img width="1020"
+                             height="265"
+                             src="https://digitalwebwiki.com/wp-content/uploads/2023/01/Digitalwebwiki-1400x364.png"
+                             class="header-logo-dark"
+                             alt="DIGITALWEBWIKI">
+                    </a>
+                </div>
+                <div class="flex-col show-for-medium flex-left">
+                    <ul class="mobile-nav nav nav-left flex-grow ">
+                        <li class="nav-icon has-icon">
+                            <a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color=""
+                               class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+                                <i class="icon-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-col hide-for-medium flex-left flex-grow">
+                    <ul class="header-nav header-nav-main nav nav-left  nav-uppercase">
+                        <li class="header-search-form search-form html relative has-icon">
+                            <div class="header-search-form-wrapper">
+                                <div class="searchform-wrapper ux-search-box relative form-flat is-normal">
+                                    <form role="search" method="get" class="searchform" action="">
+                                        <div class="flex-row relative">
+                                            <div class="flex-col flex-grow">
+                                                <label class="screen-reader-text"
+                                                       for="woocommerce-product-search-field-0">Search for:</label>
+                                                <input type="search" id="woocommerce-product-search-field-0"
+                                                       class="search-field mb-0" placeholder="Microsoft office 365"
+                                                       value="" name="s" autocomplete="off">
+                                                <input type="hidden" name="post_type" value="product">
+                                            </div>
+                                            <div class="flex-col">
+                                                <button type="submit" value="Search"
+                                                        class="ux-search-submit submit-button secondary button icon mb-0"
+                                                        aria-label="Submit">
+                                                    <i class="icon-search"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="live-search-results text-left z-top">
+                                            <div class="autocomplete-suggestions"
+                                                 style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-						<li class="navigation_one"><a
-									class="{{ app.request.attributes.get('_route') == 'help_guide' ? 'is-active': ''}}"
-									href="{{ url('help_guide') }}">ご利用ガイド</a></li>
+                <div class="flex-col hide-for-medium flex-right">
+                    <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
+                        <li class="account-item has-icon">
+                            <div class="header-button">
+                                <a href="{{ url('entry') }}"
+                                   class="nav-top-link nav-top-not-logged-in icon primary button circle is-small"
+                                   data-open="#login-form-popup">
+                                    <span> 新規会員登録 </span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header-divider"></li>
+                        <li class="cart_item">
+                            <a href="{{ url('cart') }}">
+                                <img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}">
+                                <span class="badge">{{ totalQuantity|number_format }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-					</ul>
-				</div>
-
-				<div id="member" class="member drawer_block pc">
-					<ul class="member_link">
-						<li><a href="{{ url('entry') }}"><img class="user-icon" src="{{ asset('assets/icon/user.svg') }}"  alt=""/>
-								新規会員登録
-							</a></li>
-						<!--
-				<li><a href="{{ url('mypage_login') }}"> <svg
-							class="cb cb-lock-circle">
-							<use xlink:href="#cb-lock-circle"></use></svg>ログイン
-				</a></li>
-				-->
-					</ul>
-				</div>
-				<div id="cart_area" class="pc">
-					<a href="{{ url('cart') }}"><img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}"></a> <span class="badge">{{
-						totalQuantity|number_format }}</span>
-				</div>
-
-
-			</div>
-		</div>
-		<div class="header_logo_area visible-ts">
-			<a href="#"><img alt="logo" title="logo"
-							 style="width: 168px;height: auto;margin-top: 10px;margin-left: 8px;"
-							 src="{{ asset('assets/my/images/logo.png') }}"></a>
-		</div>
-		<div class="navigation-ts  visible-ts">
-			<ul>
-				<li class="navigation_one">
-					<a class="{{ app.request.attributes.get('_route') == 'product_list' ? 'is-active': ''}}" href="{{ url('product_list') }}">商品一覧</a></li>
-				<li class="navigation_one">
-					<a class="{{ app.request.attributes.get('_route') == 'help_about' ? 'is-active': ''}}" href="{{ url('help_about') }}">会社概要</a>
-				</li>
-				<li class="navigation_one">
-					<a class="{{ app.request.attributes.get('_route') == 'contact' ? 'is-active': ''}}" href="{{ url('contact') }}">お問い合わせ</a>
-				</li>
-				<li class="navigation_one">
-					<a class="{{ app.request.attributes.get('_route') == 'post_lists' ? 'is-active': ''}}" href=" {{ url('post_lists') }} ">Blog</a>
-				</li>
-				<li class="navigation_one">
-					<a class="{{ app.request.attributes.get('_route') == 'mypage_login' ? 'is-active': ''}}" href=" {{ url('mypage_login') }} ">ログイン</a>
-				</li>
-			</ul>
-
-		</div>
-
-		<div class="cart_area visible-ts">
-			<a href="{{ url('cart') }}"><img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}"></a>
-			<span class="badge">{{ totalQuantity|number_format }}</span>
-{#			<p >#}
-
-{#				<a style="font-size: 18px;85px;color: #545162;  font-weight: bold;" href="{{ url('cart') }}"> ショッピングカート<span class="badge" style="background-color: #e31919;">{{#}
-{#						totalQuantity|number_format }}</span> </a>#}
-
-
-{#			</p>#}
-		</div>
-
-	</div>
-
-
+                <div class="cart_item flex-col show-for-medium flex-right">
+                    <a href="{{ url('cart') }}">
+                        <img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}">
+                        <span class="badge">{{ totalQuantity|number_format }}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="top-divider full-width"></div>
+            </div>
+        </div>
+        <div id="wide-nav" class="header-bottom wide-nav nav-dark flex-has-center hide-for-medium">
+            <div class="flex-row container">
+                <div class="flex-col hide-for-medium flex-center">
+                    <ul class="nav header-nav header-bottom-nav nav-center nav-line-grow nav-size-medium nav-spacing-medium nav-uppercase nav-prompts-overlay">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-20 current_page_item menu-item-190 menu-item-design-default">
+                            <a class="{{ app.request.attributes.get('_route') == 'homepage' ? 'is-active': '' }}" href="{{ url('homepage') }}">ホーム</a>
+                        </li>
+                        <li id="menu-item-163"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163 menu-item-design-default">
+                            <a class="{{ app.request.attributes.get('_route') == 'help_about' ? 'is-active': '' }}" href="{{ url('help_about') }}">会社概要</a>
+                        </li>
+                        <li id="menu-item-336"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-336 menu-item-design-default">
+                            <a
+                                    class="{{ app.request.attributes.get('_route') == 'contact' ? 'is-active': '' }}"
+                                    href="{{ url('contact') }}">お問い合わせ</a>
+                        <li id="menu-item-296"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-296 menu-item-design-default">
+                            <a
+                                    class="{{ app.request.attributes.get('_route') == 'post_lists' ? 'is-active': '' }}"
+                                    href=" {{ url('post_lists') }} ">Blog</a>
+                        </li>
+                        <li id="menu-item-297"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-297 menu-item-design-default">
+                            <a
+                                    class="{{ app.request.attributes.get('_route') == 'mypage_login' ? 'is-active': '' }}"
+                                    href=" {{ url('mypage_login') }} ">ログイン</a></li>
+                        <li id="menu-item-622"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-622 menu-item-design-default has-dropdown">
+                            <a
+                                    class="{{ app.request.attributes.get('_route') == 'help_guide' ? 'is-active': '' }}"
+                                    href="{{ url('help_guide') }}">ご利用ガイド</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-bg-container fill">
+            <div class="header-bg-image fill"></div>
+            <div class="header-bg-color fill"></div>
+        </div>
+    </div>
 </header>
+
