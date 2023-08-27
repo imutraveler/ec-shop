@@ -1,0 +1,72 @@
+{# This file is part of EC-CUBE Copyright(c) LOCKON CO.,LTD. All Rights
+Reserved. http://www.lockon.co.jp/ For the full copyright and license
+information, please view the LICENSE file that was distributed with this
+source code. #} {% extends 'guid_frame.twig' %} {% set posts =
+getGuids() %} {% block main %}
+<section class="single_blog_area">
+	<div class="container">
+		<div class="row justify-content-center">
+			<!-- ****** Blog Sidebar ****** -->
+			<div class="col-10 col-lg-2 col-md-2">
+				<div class="sidemenu_wrap P005_00">
+					<div class="parent expand menu_id_0">ご利用ガイド</div>
+					<ul class="children">
+
+						<li class="child menu_id_2 "><a href="/guide/description"
+							title="注文方法のご案内">注文方法のご案内</a></li>
+						<li class="child menu_id_3 "><a href="/guide/delivery"
+							title="お支払い方法・送料・手数料・お届けについて">お支払い方法・送料・手数料・お届けについて</a></li>
+						<li class="child menu_id_5 "><a href="/guide/cancel"
+							title="注文取消し・返品について">注文取消し・返品について</a></li>
+						<li class="child menu_id_6 "><a href="/guide/discount"
+							class="active" title="ポイント・クーポンについて">ポイント・クーポンについて</a></li>
+						<li class="child menu_id_4 "><a href="#"
+							title="よくあるご質問">よくあるご質問</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-12 col-lg-10 col-md-10">
+				<div class="ec-pageHeader">
+					<h1 class="title_top"
+						style="padding-left: 45px; font-size: 20px; border-bottom: none; padding-bottom: 8px;">ポイント・クーポンについて</h1>
+				</div>
+				<div class="ec-off1Grid">
+					<div class="ec-off1Grid__cell">
+
+
+						<p>
+    <strong><span style="font-size:19px">ポイントについて</span></strong>
+</p>
+<p>
+    会員の方がお買い物すると出荷完了時にポイントが付与されます。貯まったポイントは次回以降のお買い物時にご利用いただけます。
+</p>
+<p>
+    ※通常は、税込価格の５％　が付与されますが、キャンペーンなどによりポイント倍率は変更になる場合がございます。
+</p>
+<p>
+    <strong>ポイントのご利用方法</strong>
+</p>
+<p>
+    貯まったポイントは次回以降のショッピングで1ポイント＝1円値引きとしてご利用いただけます。
+</p>
+<p>
+    ご注文手続き時に「利用ポイント」の画面に入力してください。
+</p>
+<p>
+    <br/>
+</p>
+
+
+					</div>
+					
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
+

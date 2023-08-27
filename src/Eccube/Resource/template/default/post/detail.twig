@@ -1,0 +1,218 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% extends 'post_frame.twig' %}
+
+{% block main %}
+    <div class="ec-role">
+        <div class="ec-pageHeader">
+           <h1 class="heading heading-primary" style="border-top:none;border-bottom:none;margin-bottom:20px;padding-top:60px;">{{ post.post_title }}</h1>
+        </div>
+    </div>
+    <ul class="dateList dateList-single">
+        <li class="dateList__item icon-calendar">{{ post.post_date }}</li> 
+     </ul>
+     <ul class="socialList">
+  <li class="socialList__item"><a class="socialList__link icon-facebook" href="http://www.facebook.com/sharer.php?u={{url}}&t={{title}}" target="_blank" title="Facebookで共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-twitter" href="http://twitter.com/intent/tweet?text={{titleAndURL}}&url={{url}}" target="_blank" title="Twitterで共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-google" href="https://plus.google.com/share?url={{url}}" target="_blank" title="Google+で共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-hatebu" href="http://b.hatena.ne.jp/add?mode=confirm&url={{url}}&title={{title}}" target="_blank" data-hatena-bookmark-title="{{title}}" title="このエントリーをはてなブックマークに追加"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-pocket" href="http://getpocket.com/edit?url={{url}}" target="_blank" title="pocketで共有"></a></li><li class="socialList__item"><a class="socialList__link icon-line" href="http://line.naver.jp/R/msg/text/?{{titleAndURL}}" target="_blank" title="LINEで送る"></a></li>
+ </ul>
+  <div class="container">
+   <dic class="row">
+   <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-12" itemscope  itemtype="https://schema.org/BlogPosting">
+    <span  style="display:none;" itemprop="headline"> {{ post.post_title }}</span>
+
+    {% if thumb_url is not empty %}
+    <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="{{thumb_url}}">
+      <meta itemprop="width" content="900">
+      <meta itemprop="height" content="640">
+    </figure>
+     {% endif %}
+
+    
+    <section class="content" itemprop="mainEntityOfPage">
+    {{ outLine|raw }}
+    </section>
+    </div>
+
+    <!-- ****** Blog Sidebar ****** -->
+    
+     <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                <div class="blog-sidebar">
+                   
+                    <div class="single-widget-area popular-post-widget" >
+                        
+			
+
+                        <aside id="aldehyde_rp-2" class="widget widget_aldehyde_rp"><h1 class="widget-title title-font">最新記事</h1>	
+			<ul class="rp">
+		         	{% for recentPost in recentPosts %}  	 
+		         <li class="rp-item">
+		         		         
+		         	
+		         <div class="rp-title">
+			 <a href="{{ url('post_detail', {'id': recentPost.ID}) }}">{{recentPost.post_title}}
+			 </a>
+			 </div>
+		         <div class="rp-date">{{recentPost.post_date}}</div>
+		         </li>      
+		      
+		         		 
+		             {% endfor %}
+		      
+				</ul>
+		</aside>
+
+		 <aside id="aldehyde_rp-2" class="widget widget_aldehyde_rp"><h1 class="widget-title title-font">人気記事</h1>	
+			<ul class="rp">
+		         	 
+		         <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/225">【Excel】「動きが遅い」と感じたら試してほしい対処法13選
+			 </a>
+			 </div>
+		         
+		         </li>  
+			 
+			   <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/250">エクセルでカーソルが動かない時試してみる3つの対処方法
+			 </a>
+			 </div>
+		         
+		         </li> 
+
+
+			   <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/312">Office Home & Business 2019のインストール方法（Windows/Mac）
+			 </a>
+			 </div>
+		         
+		         </li>
+
+			  <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/424"> Microsoft Office 2021 をダウンロードしてインストールする方法
+			 </a>
+			 </div>
+		         
+		         </li> 
+			  <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/153"> Microsoft Office 2019 Pro plus をダウンロード・インストールする
+			 </a>
+			 </div>
+		         
+		         </li> 
+		      
+
+			   <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/275">  Word で「 応答なし 」エラーが頻発する原因と対応方法
+			 </a>
+			 </div>
+		         
+		         </li> 
+
+			 <li class="rp-item">
+		         		        
+		         	
+		         <div class="rp-title">
+			 <a href="/post/detail/422">  Microsoft Office 2021 の価格は？最安値段で入手する方法
+			 </a>
+			 </div>
+		         
+		         </li> 
+
+
+			  
+
+			
+		         		 
+		            
+		      
+				</ul>
+		</aside>
+                       
+			
+                       
+                       
+                    </div>
+                </div>
+         </div>
+	 
+	      <!-- ****** Blog Sidebar ****** -->
+    
+    </div>
+   <dic class="row">
+   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+    <hr  style="border: 1px solid #cbd2d6; background-image: unset; background-position: unset; background-size: unset; background-repeat: unset;height: 0;border-bottom: 0;margin-top: 0; margin-bottom: 0;">
+   </div>
+   </div>
+ <!--
+   <dic class="row">
+   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+      <h3 style="font-size:2.5rem;ine-height: 1.4; margin: 3rem 0 1rem;">人気記事</h3>
+   </div>
+   </div>
+   <dic class="row">
+   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+   
+     <ul style="color: #424242;list-style: none;margin-block-start: 1em; margin-block-end: 1em;margin-inline-start: 0px; margin-inline-end: 0px;padding-inline-start: 40px;">
+       <li style="margin-top: 20px; line-height: 1.4;isplay: list-item;text-align: -webkit-match-parent;color: #424242;">
+        <a style="padding: 0; font-size: 1.8rem;vertical-align: baseline;text-decoration: none; color: #0066c0;" href="/post/detail/153">
+	  Microsoft Office 2019 Pro plus をダウンロード・インストールする
+	</a>
+      </li>
+      <li style="margin-top: 20px; line-height: 1.4;isplay: list-item;text-align: -webkit-match-parent;color: #424242;">
+        <a style="padding: 0; font-size: 1.8rem;vertical-align: baseline;text-decoration: none; color: #0066c0;" href="/post/detail/312">
+	  Office Home & Business 2019のインストール方法（Windows/Mac）
+	</a>
+      </li>
+      <li style="margin-top: 20px; line-height: 1.4;isplay: list-item;text-align: -webkit-match-parent;color: #424242;">
+        <a style="padding: 0; font-size: 1.8rem;vertical-align: baseline;text-decoration: none; color: #0066c0;" href="/post/detail/225">
+	  【Excel】「動きが遅い」と感じたら試してほしい対処法13選
+	</a>
+      </li>
+      <li style="margin-top: 20px; line-height: 1.4;isplay: list-item;text-align: -webkit-match-parent;color: #424242;">
+        <a style="padding: 0; font-size: 1.8rem;vertical-align: baseline;text-decoration: none; color: #0066c0;" href="/post/detail/250">
+	  エクセルでカーソルが動かない時試してみる3つの対処方法
+	</a>
+      </li>
+      <li style="margin-top: 20px; line-height: 1.4;isplay: list-item;text-align: -webkit-match-parent;color: #424242;">
+        <a style="padding: 0; font-size: 1.8rem;vertical-align: baseline;text-decoration: none; color: #0066c0;" href="/post/detail/275">
+	  Word で「 応答なし 」エラーが頻発する原因と対応方法
+	</a>
+      </li>
+     
+     </ul>
+   </div>
+
+   </div>
+   -->
+
+  </div>
+{% endblock %}

@@ -1,0 +1,313 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+<!-- 内容 -->
+<div class="ty-bottom clearfix" style="margin-top: 40px">
+    <div class="product-list">
+        <!-- 左侧图文 -->
+        <div class="product-block">
+            <div class="top_text">
+                <div class="title02"><em>最新</em>製品</div>
+                <p>永久ライセンス、ネット最安値</p>
+            </div>
+            <div class="product_cen">
+                <ul>
+		  <!--
+                    {% set cateGory1Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([1]) %}
+                    {% for product in cateGory1Products %}
+                        {% if index < 2 %}
+                            <li>
+                                <div class="product_img">
+                                    {% if product.ProductImage|length > 0 %}
+                                        <img src="{{ asset(product.ProductImage[0], 'save_image') }}">
+                                    {% else %}
+                                        <img src="{{ asset(''|no_image_product, 'save_image') }}"/>
+                                    {% endif %}
+                                </div>
+                                <div class="product-item">
+                                    <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="{{product.name}}">{{product.name}}</a>
+                                    <div class="price">価格：<b>{{product.getPrice01IncTaxMin|price }}</b>
+                                        <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% set cateGory2Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([7]) %}
+                    {% for product in cateGory2Products %}
+                        {% if index < 1 %}
+                            <li>
+                                <div class="product_img">
+                                    {% if product.ProductImage|length > 0 %}
+                                        <img src="{{ asset(product.ProductImage[0], 'save_image') }}">
+                                    {% else %}
+                                        <img src="{{ asset(''|no_image_product, 'save_image') }}"/>
+                                    {% endif %}
+                                </div>
+                                <div class="product-item">
+                                    <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="{{product.name}}">{{product.name}}</a>
+                                    <div class="price">価格：<b>{{product.getPrice01IncTaxMin|price }}</b>
+                                        <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+		    -->
+                    
+                       <li>
+                             <div class="product_img">
+                                   <img src="/html/template/default/assets/img/2.png">
+                                 </div>
+                                <div class="product-item">
+                                    <a href="/products/detail/9" target="_blank" title="Microsoft Office Professional Plus 2021 ダウンロード版  | Windows 10/11 PC 1台用 |">
+				     Microsoft Office Professional Plus 2021 ダウンロード版  | Windows 10/11 PC 1台用 |
+				    </a>
+                                    <div class="price">価格：<b>￥12,000</b>
+                                        <div class="pur_but"><a href="/products/detail/9">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                         </li>
+
+			  <li>
+                             <div class="product_img">
+                                   <img src="/html/template/default/assets/img/1.png">
+                                 </div>
+                                <div class="product-item">
+                                    <a href="/products/detail/10" target="_blank" title="Microsoft Office Home and Business 2021 For Mac  ダウンロード版 | Mac 1台 |">
+				     Microsoft Office Home and Business 2021 For Mac  ダウンロード版 | Mac 1台 |
+				    </a>
+                                    <div class="price">価格：<b>￥12,500</b>
+                                        <div class="pur_but"><a href="/products/detail/10">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                         </li>
+
+
+
+			 <li>
+                                <div class="product_img">
+                              <img src="/html/template/default/assets/img/3.png">
+                                </div>
+                               <div class="product-item">
+                                    <a href="/products/detail/3" target="_blank" title="Microsoft Office Professional Plus 2019 ダウンロード版 | Windows PC 1台用 |">
+				    Microsoft Office Professional Plus 2019 ダウンロード版 | Windows PC 1台用 |
+				    </a>
+                                    <div class="price">価格：<b>￥10,000</b>
+                                        <div class="pur_but"><a href="/products/detail/3">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+			     <li>
+                                <div class="product_img">
+                              <img src="/html/template/default/assets/img/4.png">
+                                </div>
+                               <div class="product-item">
+                                    <a href="/products/detail/8" target="_blank" title="Microsoft Office Home and Business 2019 For Mac ダウンロード版 | Mac 1台 |">
+				    Microsoft Office Home and Business 2019 For Mac ダウンロード版 | Mac 1台 |
+				    </a>
+                                    <div class="price">価格：<b>￥8,000</b>
+                                        <div class="pur_but"><a href="/products/detail/8">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+
+			     <li>
+                                <div class="product_img">
+                              <img src="/html/template/default/assets/img/5.png">
+                                </div>
+                               <div class="product-item">
+                                    <a href="#" target="_blank" title="Microsoft Office 2016 Pro plus[ダウンロード版] (PC2台/1ライセンス)日本語版">
+				    Microsoft Office 2016 Pro plus[ダウンロード版] (PC2台/1ライセンス)日本語版
+				    </a>
+                                    <div class="price">価格：<b>￥10,000</b>
+                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+			     <li>
+                                <div class="product_img">
+                              <img src="/html/template/default/assets/img/6.png">
+                                </div>
+                               <div class="product-item">
+                                    <a href="#" target="_blank" title="Microsoft 365 Apps for enterpriseダウンロード版( PC/Mac15台/1ユーザー)">
+				    Microsoft 365 Apps for enterpriseダウンロード版( PC/Mac15台/1ユーザー)
+				    </a>
+                                    <div class="price">価格：<b>￥9,000</b>
+                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+			     <li>
+                                <div class="product_img">
+                              <img src="/html/template/default/assets/img/7.png">
+                                </div>
+                               <div class="product-item">
+                                    <a href="#" target="_blank" title="Windows 10 Pro (32bit/64bit ）ダウンロード版|1台|">
+				    Windows 10 Pro (32bit/64bit ）ダウンロード版|1台|
+				    </a>
+                                    <div class="price">価格：<b>￥9,000</b>
+                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+
+			      <li>
+                                <div class="product_img">
+                              <img src="/html/template/default/assets/img/8.png">
+                                </div>
+                               <div class="product-item">
+                                    <a href="#" target="_blank" title="Windows 11 Pro (32bit/64bit ）ダウンロード版|1台|">
+				    Windows 11 Pro (32bit/64bit ）ダウンロード版|1台|
+				    </a>
+                                    <div class="price">価格：<b>￥10,000</b>
+                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
+                                    </div>
+                                </div>
+                            </li>
+
+                    
+                    <!--
+      {% set cateGory3Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([5]) %}
+      {% for product in cateGory3Products %}
+      {% if index < 1 %}
+        <li>
+          <div style="float: left; height:280px;">
+            {% if product.ProductImage|length > 0 %}
+              <img src="{{ asset(product.ProductImage[0], 'save_image') }}">
+            {% else %}
+              <img src="{{ asset(''|no_image_product, 'save_image') }}"/>
+            {% endif %}
+            <div class="sub_img"><img src="{{ asset('assets/my/images/win.png') }}"></div>
+          </div>
+          <div class="product-item">
+            <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">{{product.name}}</a>
+            <div style="line-height: 36px; color: #ED7424;">価格：<b>{{product.getPrice01IncTaxMin|price }}</b>
+              <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div>
+            </div>
+          </div>
+        </li>
+      {% endif %}
+      {% endfor %}
+      -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- 右侧列表 -->
+        <div class="right-part">
+{#            <div class="pic-and-gradient"><a href="post/lists?size=10&index=1" target="_blank"><img src="{{ asset('assets/my/images/4.png') }}"></a>#}
+{#            </div>#}
+            <div class="notice-list">
+                <div class="notice-title">お知らせ
+                   
+                </div>
+                <ul class="ty-pic-txt">
+		    {% set posts = getNotices(5) %}
+                    {% for post in posts %}
+                      <li>
+                        <a href="{{ url('notice_detail', {'id': post.ID}) }}" title="{{post.post_title}}" target="_blank">
+			 {{post.post_title}}
+			</a>
+                        <span>{{post.post_date}}</span>
+                       
+                    </li>
+		     {% endfor %}
+		
+
+                </ul>
+
+            </div>
+
+            <div class="post-list">
+                <div class="post-title">注意事項</div>
+                <ul class="ty-pic-txt">
+
+                    <li>
+                        <a href="post/detail/153" title="Microsoft Office 2019 Pro plus をダウンロード・インストールする" target="_blank">Microsoft Office 2019 Pro plus をダウンロード・インストールする</a>
+                        <!-- <span>{{post.post_date}}</span>-->
+                    </li>
+                    <li>
+                        <a href="post/detail/108" title="Windows10 のインストーラーをダウンロードしてインストールする方法" target="_blank">
+                            Windows10 のインストーラーをダウンロードしてインストールする方法</a>
+                        <!-- <span>{{post.post_date}}</span>-->
+                    </li>
+                    <li>
+                        <a href="post/detail/312" title="Office Home & Business 2019のインストール方法（Windows/Mac）" target="_blank">Office Home & Business 2019のインストール方法（Windows/Mac）</a>
+                        <!-- <span>{{post.post_date}}</span>-->
+                    </li>
+                    <li>
+                        <a href="post/detail/275" title="Word で「 応答なし 」エラーが頻発する原因と対応方法" target="_blank">Word で「 応答なし 」エラーが頻発する原因と対応方法</a>
+                        <!-- <span>{{post.post_date}}</span>-->
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+  <!-- 下方查看更多
+  <div class="but_more"><a href="post/lists?size=10&index=1">もっと見る</a></div>-->
+</div>
+<div class="blog-list">
+    <div class="ty-bottom clearfix">
+        <div class="top_text">
+            <div class="title02"><em>人気</em>BLOG
+               <!--
+		<div class="more-btn">
+                    <a href="post/lists?size=10&index=1">もっと見る
+                        <svg t="1630143367783" class="time-3-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2461" width="16" height="16">
+                            <path d="M758.528 512L384 886.528l-60.330667-60.330667 313.984-314.453333-310.954666-310.912L386.986667 140.501333z"
+                                  p-id="2462" style="fill:#ED7424"></path>
+                        </svg>
+                    </a>
+                </div>
+		-->
+            </div>
+            <p>フリー素材、知識は勝手に学ぶ</p>
+
+        </div>
+        <div class="pro-new-show">
+            <!--人气博客列表-->
+            <div class="pro-list">
+                <ul>
+
+                    {% set posts = getPosts(8) %}
+                    {% for post in posts %}
+                        <li>
+                            <a href="{{ url('post_detail', {'id': post.ID}) }}">
+                                <div class="img">
+                                    <img src="{{post.image}}" />
+                                </div>
+                                <div class="desc">
+                                    <p class="p-title" style="overflow:hidden;">{{post.title}}</p>
+
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                   
+
+                </ul>
+            </div>
+            <!--轮播左右箭头-->
+           
+            <!-- 下方查看更多 -->
+          <div class="but_more"><a href="post/lists?size=10&index=1">もっと見る</a></div>
+        </div>
+    </div>
+</div>

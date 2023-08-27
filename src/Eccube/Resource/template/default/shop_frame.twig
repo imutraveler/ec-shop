@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<!--
+    <meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="eccube-csrf-token" content="{{ csrf_token(constant('Eccube\\Common\\Constant::TOKEN_NAME')) }}">
+    <title>{{ BaseInfo.shop_name }}{% if subtitle is defined and subtitle is not empty %} / {{ subtitle }}{% elseif title is defined and title is not empty %} / {{ title }}{% endif %}</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMD0H04D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JTMD0H04D6');
+</script>
+    {% if Page.author is not empty %}
+        <meta name="author" content="{{ Page.author }}">
+    {% endif %}
+    {% if Page.description is not empty %}
+        <meta name="description" content="{{ Page.description }}">
+    {% endif %}
+
+    {% if Page.keyword is not empty %}
+        <meta name="keywords" content="{{ Page.keyword }}">
+    {% endif %}
+    {% if Page.meta_robots is not empty %}
+        <meta name="robots" content="{{ Page.meta_robots }}">
+    {% endif %}
+    {% if Page.meta_tags is not empty %}
+        {{ include(template_from_string(Page.meta_tags)) }}
+    {% endif %}
+        {# my css #}
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/swiper.min.css') }}" />
+     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+     <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/product_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/font.css') }}" />-->
+    <script charset="utf-8" type="text/javascript" src="{{ asset('assets/my/js/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.twbsPagination.js')}}"></script>
+    <script>
+        $(function() {
+            $.ajaxSetup({
+                'headers': {
+                    'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')
+                }
+            });
+        });
+    </script>
+    {# Layout: HEAD #}
+    {% if Layout.Head %}
+        {{ include('block.twig', {'Blocks': Layout.Head}) }}
+    {% endif %}
+    {# プラグイン用styleseetやmetatagなど #}
+    {% if plugin_assets is defined %}{{ include('@admin/snippet.twig', { snippets: plugin_assets }) }}{% endif %}
+     <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}" />
+</head>
+<body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}">
+
+{# Layout: BODY_AFTER #}
+{% if Layout.BodyAfter %}
+    {{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
+{% endif %}
+{% if Layout.Header %}
+            {{ include('block.twig', {'Blocks': Layout.Header}) }}
+    {% endif %}
+    <section class="fancy-testimonials-area section-padding-120">
+    <div class="container minHeight">
+        <div class="row">
+            <div class="col-12">
+             {# Layout: CONTENTS_TOP #}
+    {% if Layout.ContentsTop %}
+        <div class="ec-layoutRole__contentTop">
+            {{ include('block.twig', {'Blocks': Layout.ContentsTop}) }}
+        </div>
+    {% endif %}
+    {# Layout: SIDE_LEFT #}
+    {% if Layout.SideLeft %}
+        {{ include('block.twig', {'Blocks': Layout.SideLeft}) }}
+    {% endif %}
+
+    {% set layoutRoleMain = 'ec-layoutRole__main' %}
+    {% if Layout.ColumnNum == 2 %}
+        {% set layoutRoleMain = 'ec-layoutRole__mainWithColumn' %}
+    {% elseif Layout.ColumnNum == 3 %}
+        {% set layoutRoleMain = 'ec-layoutRole__mainBetweenColumn' %}
+    {% endif %}
+
+    <div class="{{ layoutRoleMain }}">
+        {# Layout: MAIN_TOP #}
+        {% if Layout.MainTop %}
+                {{ include('block.twig', {'Blocks': Layout.MainTop}) }}
+        {% endif %}
+
+        {# MAIN AREA #}
+        {% block main %}{% endblock %}
+
+        {# Layout: MAIN_Bottom #}
+        {% if Layout.MainBottom %}
+            {{ include('block.twig', {'Blocks': Layout.MainBottom}) }}
+        {% endif %}
+    </div>
+
+        {# Layout: SIDE_RIGHT #}
+        {% if Layout.SideRight %}
+             {{ include('block.twig', {'Blocks': Layout.SideRight}) }}
+        {% endif %}
+    {# Layout: CONTENTS_BOTTOM #}
+    {% if Layout.ContentsBottom %}
+        {{ include('block.twig', {'Blocks': Layout.ContentsBottom}) }}
+    {% endif %}
+            </div>
+        </div>
+    </div>
+    </section>
+ {# Layout: CONTENTS_FOOTER #}
+    {% if Layout.Footer %}
+            {{ include('block.twig', {'Blocks': Layout.Footer}) }}
+    {% endif %}
+{% include('@common/lang.twig') %}
+{% block javascript %}{% endblock %}
+{# Layout: CLOSE_BODY_BEFORE #}
+{% if Layout.CloseBodyBefore %}
+    {{ include('block.twig', {'Blocks': Layout.CloseBodyBefore}) }}
+{% endif %}
+{# プラグイン用Snippet #}
+{% if plugin_snippets is defined %}
+    {{ include('snippet.twig', { snippets: plugin_snippets }) }}
+{% endif %}
+ <script src="{{ asset('assets/my/js/bootstrap/popper.min.js')}}"></script>
+    <script src="{{ asset('assets/my/js/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/my/js/others/plugins.js')}}"></script>
+    <script src="{{ asset('assets/my/js/active.js')}}"></script>
+</body>
+</html>

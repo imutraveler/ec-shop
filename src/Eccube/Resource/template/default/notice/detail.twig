@@ -1,0 +1,59 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% extends 'post_frame.twig' %}
+
+{% block main %}
+    <div class="ec-role">
+        <div class="ec-pageHeader">
+           <h1 class="heading heading-primary" style="border-top:none;border-bottom:none;margin-bottom:20px;">{{ post.post_title }}</h1>
+        </div>
+    </div>
+    <ul class="dateList dateList-single">
+        <li class="dateList__item icon-calendar">{{ post.post_date }}</li> 
+     </ul>
+     <ul class="socialList">
+  <li class="socialList__item"><a class="socialList__link icon-facebook" href="http://www.facebook.com/sharer.php?u={{url}}&t={{title}}" target="_blank" title="Facebookで共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-twitter" href="http://twitter.com/intent/tweet?text={{titleAndURL}}&url={{url}}" target="_blank" title="Twitterで共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-google" href="https://plus.google.com/share?url={{url}}" target="_blank" title="Google+で共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-hatebu" href="http://b.hatena.ne.jp/add?mode=confirm&url={{url}}&title={{title}}" target="_blank" data-hatena-bookmark-title="{{title}}" title="このエントリーをはてなブックマークに追加"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-pocket" href="http://getpocket.com/edit?url={{url}}" target="_blank" title="pocketで共有"></a></li><li class="socialList__item"><a class="socialList__link icon-line" href="http://line.naver.jp/R/msg/text/?{{titleAndURL}}" target="_blank" title="LINEで送る"></a></li>
+ </ul>
+  <div class="container">
+   <dic class="row">
+   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-12" itemscope  itemtype="https://schema.org/BlogPosting">
+    <span  style="display:none;" itemprop="headline"> {{ post.post_title }}</span>
+
+    {% if thumb_url is not empty %}
+    <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="{{thumb_url}}">
+      <meta itemprop="width" content="900">
+      <meta itemprop="height" content="640">
+    </figure>
+     {% endif %}
+
+    
+    <section class="content" itemprop="mainEntityOfPage">
+    {{ outLine|raw }}
+    </section>
+    </div>
+
+  
+       
+    </div>
+   <dic class="row">
+   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+    <hr  style="border: 1px solid #cbd2d6; background-image: unset; background-position: unset; background-size: unset; background-repeat: unset;height: 0;border-bottom: 0;margin-top: 0; margin-bottom: 0;">
+   </div>
+   </div>
+
+
+  </div>
+{% endblock %}

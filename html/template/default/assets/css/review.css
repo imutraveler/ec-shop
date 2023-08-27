@@ -1,0 +1,155 @@
+.review_area{
+border: 1px solid #ccc;
+margin: 30px auto;
+
+}
+
+#product_review_area .review-block {
+ border-top: 1px solid #ccc;
+ padding: 15px;
+}
+.review-head {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 15px 5px 15px;
+	width:80%
+}
+
+
+
+.head-cont {
+    display: table;
+    width: 100%;
+}
+
+.review-head .icon {
+    position: relative;
+    text-align: center;
+    width: 74px;
+    display: table-cell;
+}
+
+.review-head .icon:before {
+    width: 74px;
+    height: 74px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border-radius: 50%;
+}
+
+.review-head .data {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.review-head .icon .avatars img {
+    width: 46px;
+    position: relative;
+    z-index: 2;
+    margin-top: 7px;
+}
+
+.review-head .icon .feels img {
+    width: 30px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: -5px;
+}
+
+
+.review-cont {
+    margin: 0 15px 15px;
+}
+
+.review-head .data .user {
+    margin: 0 0 8px 2px;
+}
+
+.review-head .data .user li {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-right: 5px;
+	list-style: none;
+}
+
+.review-head .data .rating li {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 26px;
+}
+
+.review-head .data .rating dd{
+  float:left;
+  margin-right:5px;
+}
+
+.review-cont .tit {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.review-cont p {
+    line-height: 1.8;
+    word-break: break-all;
+}
+
+.review-head .data .rating .recommend_level{
+  font-size: 20px;
+  font-weight: bold;
+}
+ .pageaation{
+        width:1000px;
+		padding-bottom: 30px;
+        margin: 5px auto;
+}
+
+
+@media screen and (max-width:960px) {
+	.visible-mobile {
+		display: block;
+		margin-bottom:15px;
+		width:90%!important;
+		padding-bottom: 30px;
+
+	}
+	.visible-pcdevice {
+		display: none;
+		
+		
+	}
+	.ec-shelfGrid{
+	 width:400px;
+	}
+	 .pageaation{
+        width:100%!important;
+		padding-bottom: 30px;
+        margin: 5px auto;
+   }
+   .review_area{
+     width:98%;
+   }
+}
+
+@media screen and (min-width:960px) {
+	.visible-mobile {
+		display: none;
+		
+
+	}
+	.visible-pcdevice {
+		display: block;
+		
+		
+	}
+
+}
+
+
+
+
+

@@ -1,0 +1,105 @@
+{# This file is part of EC-CUBE Copyright(c) LOCKON CO.,LTD. All Rights
+Reserved. http://www.lockon.co.jp/ For the full copyright and license
+information, please view the LICENSE file that was distributed with this
+source code. #} {% set Carts = get_all_carts() %} {% set totalPrice =
+get_carts_total_price() %} {% set totalQuantity =
+get_carts_total_quantity() %}
+<!-- 头部导航 -->
+<header id="header">
+	<div class="container-fluid">
+		<div class="head-inner">
+			<div class="left-side">
+				<div class="logo visible-pc">
+					<a href="#"><img alt="logo" style="width: 100%;" title="logo" src="{{ asset('assets/my/images/logo.png') }}"></a>
+				</div>
+			</div>
+			<div class="right-side">
+				<div class="navigation visible-pc" style="display: inline-block;">
+					<ul>
+						<li class="navigation_one"><a
+									class="{{ app.request.attributes.get('_route') == 'homepage' ? 'is-active': ''}}"
+									href="{{ url('homepage') }}">ホーム</a></li>
+						<li class="navigation_one"><a
+									class="{{ app.request.attributes.get('_route') == 'help_about' ? 'is-active': ''}}"
+									href="{{ url('help_about') }}">会社概要</a></li>
+						<li class="navigation_one"><a
+									class="{{ app.request.attributes.get('_route') == 'contact' ? 'is-active': ''}}"
+									href="{{ url('contact') }}">お問い合わせ</a></li>
+						<li class="navigation_one"><a
+									class="{{ app.request.attributes.get('_route') == 'post_lists' ? 'is-active': ''}}"
+									href=" {{ url('post_lists') }} ">Blog</a>
+						</li>
+						<li class="navigation_one"><a
+									class="{{ app.request.attributes.get('_route') == 'mypage_login' ? 'is-active': ''}}"
+									href=" {{ url('mypage_login') }} ">ログイン</a>
+						</li>
+
+						<li class="navigation_one"><a
+									class="{{ app.request.attributes.get('_route') == 'help_guide' ? 'is-active': ''}}"
+									href="{{ url('help_guide') }}">ご利用ガイド</a></li>
+
+					</ul>
+				</div>
+
+				<div id="member" class="member drawer_block pc">
+					<ul class="member_link">
+						<li><a href="{{ url('entry') }}"><img class="user-icon" src="{{ asset('assets/icon/user.svg') }}"  alt=""/>
+								新規会員登録
+							</a></li>
+						<!--
+				<li><a href="{{ url('mypage_login') }}"> <svg
+							class="cb cb-lock-circle">
+							<use xlink:href="#cb-lock-circle"></use></svg>ログイン
+				</a></li>
+				-->
+					</ul>
+				</div>
+				<div id="cart_area" class="pc">
+					<a href="{{ url('cart') }}"><img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}"></a> <span class="badge">{{
+						totalQuantity|number_format }}</span>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="header_logo_area visible-ts">
+			<a href="#"><img alt="logo" title="logo"
+							 style="width: 168px;height: auto;margin-top: 10px;margin-left: 8px;"
+							 src="{{ asset('assets/my/images/logo.png') }}"></a>
+		</div>
+		<div class="navigation-ts  visible-ts">
+			<ul>
+				<li class="navigation_one">
+					<a class="{{ app.request.attributes.get('_route') == 'product_list' ? 'is-active': ''}}" href="{{ url('product_list') }}">商品一覧</a></li>
+				<li class="navigation_one">
+					<a class="{{ app.request.attributes.get('_route') == 'help_about' ? 'is-active': ''}}" href="{{ url('help_about') }}">会社概要</a>
+				</li>
+				<li class="navigation_one">
+					<a class="{{ app.request.attributes.get('_route') == 'contact' ? 'is-active': ''}}" href="{{ url('contact') }}">お問い合わせ</a>
+				</li>
+				<li class="navigation_one">
+					<a class="{{ app.request.attributes.get('_route') == 'post_lists' ? 'is-active': ''}}" href=" {{ url('post_lists') }} ">Blog</a>
+				</li>
+				<li class="navigation_one">
+					<a class="{{ app.request.attributes.get('_route') == 'mypage_login' ? 'is-active': ''}}" href=" {{ url('mypage_login') }} ">ログイン</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="cart_area visible-ts">
+			<a href="{{ url('cart') }}"><img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}"></a>
+			<span class="badge">{{ totalQuantity|number_format }}</span>
+{#			<p >#}
+
+{#				<a style="font-size: 18px;85px;color: #545162;  font-weight: bold;" href="{{ url('cart') }}"> ショッピングカート<span class="badge" style="background-color: #e31919;">{{#}
+{#						totalQuantity|number_format }}</span> </a>#}
+
+
+{#			</p>#}
+		</div>
+
+	</div>
+
+
+</header>
