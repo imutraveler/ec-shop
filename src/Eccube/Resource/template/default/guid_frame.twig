@@ -49,17 +49,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/font.css') }}" />-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/flatsome.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/new.css') }}"/>
-    <script charset="utf-8" type="text/javascript" src="{{ asset('assets/my/js/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.twbsPagination.js') }}"></script>
-    <script>
-        $(function () {
-            $.ajaxSetup({
-                'headers': {
-                    'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')
-                }
-            });
-        });
-    </script>
+
     {# Layout: HEAD #}
     {% if Layout.Head %}
         {{ include('block.twig', {'Blocks': Layout.Head}) }}
@@ -69,80 +59,124 @@
     <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}"/>
 </head>
 <body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}">
-
-{# Layout: BODY_AFTER #}
-{% if Layout.BodyAfter %}
-    {{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
-{% endif %}
-{% if Layout.Header %}
-    {{ include('block.twig', {'Blocks': Layout.Header}) }}
-{% endif %}
-<section class="fancy-testimonials-area section-padding-120">
-    <div class="container minHeight">
-        <div class="row">
-            <div class="col-12">
-                {# Layout: CONTENTS_TOP #}
-                {% if Layout.ContentsTop %}
-                    <div class="ec-layoutRole__contentTop">
-                        {{ include('block.twig', {'Blocks': Layout.ContentsTop}) }}
-                    </div>
-                {% endif %}
-                {# Layout: SIDE_LEFT #}
-                {% if Layout.SideLeft %}
-                    {{ include('block.twig', {'Blocks': Layout.SideLeft}) }}
-                {% endif %}
-
-                {% set layoutRoleMain = 'ec-layoutRole__main' %}
-                {% if Layout.ColumnNum == 2 %}
-                    {% set layoutRoleMain = 'ec-layoutRole__mainWithColumn' %}
-                {% elseif Layout.ColumnNum == 3 %}
-                    {% set layoutRoleMain = 'ec-layoutRole__mainBetweenColumn' %}
-                {% endif %}
-
-                <div class="{{ layoutRoleMain }}">
-                    {# Layout: MAIN_TOP #}
-                    {% if Layout.MainTop %}
-                        {{ include('block.twig', {'Blocks': Layout.MainTop}) }}
+    <div id="wrapper">
+        {# Layout: BODY_AFTER #}
+        {% if Layout.BodyAfter %}
+            {{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
+        {% endif %}
+        {% if Layout.Header %}
+            {{ include('block.twig', {'Blocks': Layout.Header}) }}
+        {% endif %}
+        <section class="fancy-testimonials-area">
+            <div class="container minHeight">
+                <div class="row">
+                    {# Layout: CONTENTS_TOP #}
+                    {% if Layout.ContentsTop %}
+                        <div class="ec-layoutRole__contentTop">
+                            {{ include('block.twig', {'Blocks': Layout.ContentsTop}) }}
+                        </div>
+                    {% endif %}
+                    {# Layout: SIDE_LEFT #}
+                    {% if Layout.SideLeft %}
+                        {{ include('block.twig', {'Blocks': Layout.SideLeft}) }}
                     {% endif %}
 
-                    {# MAIN AREA #}
-                    {% block main %}{% endblock %}
+                    {% set layoutRoleMain = 'ec-layoutRole__main' %}
+                    {% if Layout.ColumnNum == 2 %}
+                        {% set layoutRoleMain = 'ec-layoutRole__mainWithColumn' %}
+                    {% elseif Layout.ColumnNum == 3 %}
+                        {% set layoutRoleMain = 'ec-layoutRole__mainBetweenColumn' %}
+                    {% endif %}
 
-                    {# Layout: MAIN_Bottom #}
-                    {% if Layout.MainBottom %}
-                        {{ include('block.twig', {'Blocks': Layout.MainBottom}) }}
+                    <div class="{{ layoutRoleMain }}">
+                        {# Layout: MAIN_TOP #}
+                        {% if Layout.MainTop %}
+                            {{ include('block.twig', {'Blocks': Layout.MainTop}) }}
+                        {% endif %}
+
+                        {# MAIN AREA #}
+                        {% block main %}{% endblock %}
+
+                        {# Layout: MAIN_Bottom #}
+                        {% if Layout.MainBottom %}
+                            {{ include('block.twig', {'Blocks': Layout.MainBottom}) }}
+                        {% endif %}
+                    </div>
+
+                    {# Layout: SIDE_RIGHT #}
+                    {% if Layout.SideRight %}
+                        {{ include('block.twig', {'Blocks': Layout.SideRight}) }}
+                    {% endif %}
+                    {# Layout: CONTENTS_BOTTOM #}
+                    {% if Layout.ContentsBottom %}
+                        {{ include('block.twig', {'Blocks': Layout.ContentsBottom}) }}
                     {% endif %}
                 </div>
-
-                {# Layout: SIDE_RIGHT #}
-                {% if Layout.SideRight %}
-                    {{ include('block.twig', {'Blocks': Layout.SideRight}) }}
-                {% endif %}
-                {# Layout: CONTENTS_BOTTOM #}
-                {% if Layout.ContentsBottom %}
-                    {{ include('block.twig', {'Blocks': Layout.ContentsBottom}) }}
-                {% endif %}
             </div>
-        </div>
+        </section>
+        {# Layout: CONTENTS_FOOTER #}
+        {% if Layout.Footer %}
+            {{ include('block.twig', {'Blocks': Layout.Footer}) }}
+        {% endif %}
+        {% include('@common/lang.twig') %}
+        {% block javascript %}{% endblock %}
+        {# Layout: CLOSE_BODY_BEFORE #}
+        {% if Layout.CloseBodyBefore %}
+            {{ include('block.twig', {'Blocks': Layout.CloseBodyBefore}) }}
+        {% endif %}
+        {# プラグイン用Snippet #}
+        {% if plugin_snippets is defined %}
+            {{ include('snippet.twig', { snippets: plugin_snippets }) }}
+        {% endif %}
     </div>
-</section>
-{# Layout: CONTENTS_FOOTER #}
-{% if Layout.Footer %}
-    {{ include('block.twig', {'Blocks': Layout.Footer}) }}
-{% endif %}
-{% include('@common/lang.twig') %}
-{% block javascript %}{% endblock %}
-{# Layout: CLOSE_BODY_BEFORE #}
-{% if Layout.CloseBodyBefore %}
-    {{ include('block.twig', {'Blocks': Layout.CloseBodyBefore}) }}
-{% endif %}
-{# プラグイン用Snippet #}
-{% if plugin_snippets is defined %}
-    {{ include('snippet.twig', { snippets: plugin_snippets }) }}
-{% endif %}
+</body>
+<script charset="utf-8" type="text/javascript" src="{{ asset('assets/my/js/jquery-2.2.4.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.twbsPagination.js') }}"></script>
+<script>
+    $(function () {
+        $.ajaxSetup({
+            'headers': {
+                'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')
+            }
+        });
+    });
+</script>
 <script src="{{ asset('assets/my/js/bootstrap/popper.min.js') }}"></script>
 <script src="{{ asset('assets/my/js/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/my/js/others/plugins.js') }}"></script>
-<script src="{{ asset('assets/my/js/active.js') }}"></script>
-</body>
+<script src="{{ asset('assets/my/js/active.js') }}"></script><script type="text/javascript">
+    window.flatsomeVars = {
+        "theme": {
+            "version": "3.15.7"
+        },
+        "ajaxurl": "",
+        "rtl": "",
+        "sticky_height": "70",
+        "assets_url": "",
+        "lightbox": {
+            "close_markup": "<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg></button>",
+            "close_btn_inside": false
+        },
+        "user": {
+            "can_edit_pages": false
+        },
+        "i18n": {
+            "mainMenu": "Main Menu",
+            "toggleButton": "Toggle"
+        },
+        "options": {
+            "cookie_notice_version": "1",
+            "swatches_layout": false,
+            "swatches_box_select_event": false,
+            "swatches_box_behavior_selected": false,
+            "swatches_box_update_urls": "1",
+            "swatches_box_reset": false,
+            "swatches_box_reset_extent": false,
+            "swatches_box_reset_time": 300,
+            "search_result_latency": "0"
+        },
+        "is_mini_cart_reveal": "1"
+    }
+</script>
+<script src="{{ asset('assets/my/js/flatsome.js') }}" type="text/javascript" charset="utf-8" id="flatsome-js-js"></script>
 </html>
