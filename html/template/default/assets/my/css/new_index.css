@@ -33,13 +33,13 @@ li {
 	list-style: none;
 }
 
-html,
-body {
-	font-family: 'Poppins';
-	background-color: #fff;
-	position: relative;
-	min-width: 1180px;
-}
+/*html,*/
+/*body {*/
+/*	font-family: 'Poppins';*/
+/*	background-color: #fff;*/
+/*	position: relative;*/
+/*	min-width: 1180px;*/
+/*}*/
 @media screen and (max-width: 1180px){
 	html,body.index{
 		min-width: initial;

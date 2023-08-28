@@ -104,7 +104,7 @@ source code. #} {% set Carts = get_all_carts() %} {% set totalPrice =
                         <li class="cart_item">
                             <a href="{{ url('cart') }}">
                                 <img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}">
-                                <span class="badge">{{ totalQuantity|number_format }}</span>
+                                <span class="bg-primary-color badge">{{ totalQuantity|number_format }}</span>
                             </a>
                         </li>
                     </ul>
@@ -113,7 +113,7 @@ source code. #} {% set Carts = get_all_carts() %} {% set totalPrice =
                 <div class="cart_item flex-col show-for-medium">
                     <a href="{{ url('cart') }}">
                         <img alt="ショッピングカート" title="ショッピングカート" src="{{ asset('assets/img/cart.png') }}">
-                        <span class="badge">{{ totalQuantity|number_format }}</span>
+                        <span class="bg-primary-color badge">{{ totalQuantity|number_format }}</span>
                     </a>
                 </div>
             </div>

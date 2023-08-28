@@ -60,19 +60,19 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/my/css/new.css') }}"/>
     <link rel="shortcut icon" href="{{ asset('assets/icon/office-soft.png') }}"/>
 
-    <script src="{{ asset('assets/my/js/jquery-1.11.0.js') }}" type="text/javascript" charset="utf-8"></script>
-    <script>
-        $(function () {
-            $.ajaxSetup({
-                'headers': {
-                    'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')
-                }
-            });
-        });
-    </script>
+{#    <script src="{{ asset('assets/my/js/jquery-1.11.0.js') }}" type="text/javascript" charset="utf-8"></script>#}
+{#    <script>#}
+{#        $(function () {#}
+{#            $.ajaxSetup({#}
+{#                'headers': {#}
+{#                    'ECCUBE-CSRF-TOKEN': $('meta[name="eccube-csrf-token"]').attr('content')#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    </script>#}
     {# プラグイン用styleseetやmetatagなど #}
 </head>
-<body class="index">
+<body id="wrapper" class="index">
 <!--
 <div id="preloader">
     <div class="loader">
@@ -109,9 +109,45 @@
     {{ include('block.twig', {'Blocks': Layout.Footer}) }}
 {% endif %}
 </body>
+<script type="text/javascript">
+    window.flatsomeVars = {
+        "theme": {
+            "version": "3.15.7"
+        },
+        "ajaxurl": "",
+        "rtl": "",
+        "sticky_height": "70",
+        "assets_url": "",
+        "lightbox": {
+            "close_markup": "<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg></button>",
+            "close_btn_inside": false
+        },
+        "user": {
+            "can_edit_pages": false
+        },
+        "i18n": {
+            "mainMenu": "Main Menu",
+            "toggleButton": "Toggle"
+        },
+        "options": {
+            "cookie_notice_version": "1",
+            "swatches_layout": false,
+            "swatches_box_select_event": false,
+            "swatches_box_behavior_selected": false,
+            "swatches_box_update_urls": "1",
+            "swatches_box_reset": false,
+            "swatches_box_reset_extent": false,
+            "swatches_box_reset_time": 300,
+            "search_result_latency": "0"
+        },
+        "is_mini_cart_reveal": "1"
+    }
+</script>
 <script src="{{ asset('assets/my/js/swiper.min.js') }}" type="text/javascript" charset="utf-8"></script>
-<script src="{{ asset('assets/my/js/jquery.min2.js') }}" type="text/javascript" charset="utf-8"></script>
-<script src="{{ asset('assets/my/js/jquery.min3.js') }}" type="text/javascript" charset="utf-8"></script>
+{#<script src="{{ asset('assets/my/js/jquery.min2.js') }}" type="text/javascript" charset="utf-8"></script>#}
+{#<script src="{{ asset('assets/my/js/jquery.min3.js') }}" type="text/javascript" charset="utf-8"></script>#}
+<script src="{{ asset('assets/my/js/jquery.min-3.7.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('assets/my/js/flatsome.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('assets/my/js/jquery.SuperSlide.2.1.3.js') }}" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     //轮播图开始
@@ -123,19 +159,7 @@
         pagination: '.swiper-pagination',
     });
 </script>
-<script type="text/javascript">
-    //轮播
-    /*
-    $(".pro-new-show").slide({
-      mainCell: ".pro-list ul",
-      titCell: ".pagination ul",
-      autoPage: true,
-      effect: "left",
-      autoPlay: false,
-      vis: 4,
-      trigger: "click"
-    });*/
-</script>
+
 <script type="text/javascript">
     //轮播图开始
     var swiper = new Swiper('.ty-pic-txt', {
