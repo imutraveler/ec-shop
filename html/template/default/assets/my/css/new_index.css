@@ -224,13 +224,13 @@ img {
 
 }
 
-header {
-	width: 100%;
-	color: #000;
-	background: #fff;
-	height: 100px;
-	border-bottom: #e3e3e3 1px solid;
-}
+/*header {*/
+/*	width: 100%;*/
+/*	color: #000;*/
+/*	background: #fff;*/
+/*	height: 100px;*/
+/*	border-bottom: #e3e3e3 1px solid;*/
+/*}*/
 
 .navMain {
 	width: 1360px;
@@ -1350,12 +1350,12 @@ a.addcar {
 	color: #666666;
 }
 
-.active {
-	color: white;
-	background-color: #ed5224;
-	;
+/*.active {*/
+/*	color: white;*/
+/*	background-color: #ed5224;*/
+/*	;*/
 
-}
+/*}*/
 
 .tab_nav {
 	top: 50px;
@@ -1399,17 +1399,17 @@ a.addcar {
 	width: 114px;
 }
 
-.active {
-	color: white;
-	background-color: #ed5224;
-	border: 1 solid #ed5224;
-}
+/*.active {*/
+/*	color: white;*/
+/*	background-color: #ed5224;*/
+/*	border: 1 solid #ed5224;*/
+/*}*/
 
-.actives {
-	color: #ed5224;
-	font-weight: 700;
-	background-color: white;
-}
+/*.actives {*/
+/*	color: #ed5224;*/
+/*	font-weight: 700;*/
+/*	background-color: white;*/
+/*}*/
 
 .demo {
 	text-align: center;
