@@ -10,273 +10,556 @@ file that was distributed with this source code.
 #}
 
 <!-- 内容 -->
-<div class="ty-bottom clearfix" style="margin-top: 40px">
-    <div class="product-list">
-        <!-- 左侧图文 -->
-        <div class="product-block">
-            <div class="top_text">
-                <div class="title02"><em>最新</em>製品</div>
-                <p>永久ライセンス、ネット最安値</p>
-            </div>
-            <div class="product_cen">
-                <ul>
-		  <!--
-                    {% set cateGory1Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([1]) %}
-                    {% for product in cateGory1Products %}
-                        {% if index < 2 %}
-                            <li>
-                                <div class="product_img">
-                                    {% if product.ProductImage|length > 0 %}
-                                        <img src="{{ asset(product.ProductImage[0], 'save_image') }}">
-                                    {% else %}
-                                        <img src="{{ asset(''|no_image_product, 'save_image') }}"/>
-                                    {% endif %}
-                                </div>
-                                <div class="product-item">
-                                    <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="{{product.name}}">{{product.name}}</a>
-                                    <div class="price">価格：<b>{{product.getPrice01IncTaxMin|price }}</b>
-                                        <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                    {% set cateGory2Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([7]) %}
-                    {% for product in cateGory2Products %}
-                        {% if index < 1 %}
-                            <li>
-                                <div class="product_img">
-                                    {% if product.ProductImage|length > 0 %}
-                                        <img src="{{ asset(product.ProductImage[0], 'save_image') }}">
-                                    {% else %}
-                                        <img src="{{ asset(''|no_image_product, 'save_image') }}"/>
-                                    {% endif %}
-                                </div>
-                                <div class="product-item">
-                                    <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="{{product.name}}">{{product.name}}</a>
-                                    <div class="price">価格：<b>{{product.getPrice01IncTaxMin|price }}</b>
-                                        <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-		    -->
-                    
-                       <li>
-                             <div class="product_img">
-                                   <img src="/html/template/default/assets/img/2.png">
-                                 </div>
-                                <div class="product-item">
-                                    <a href="/products/detail/9" target="_blank" title="Microsoft Office Professional Plus 2021 ダウンロード版  | Windows 10/11 PC 1台用 |">
-				     Microsoft Office Professional Plus 2021 ダウンロード版  | Windows 10/11 PC 1台用 |
-				    </a>
-                                    <div class="price">価格：<b>￥12,000</b>
-                                        <div class="pur_but"><a href="/products/detail/9">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                         </li>
+{# <div class="ty-bottom clearfix" style="margin-top: 40px"> #}
+{#    <div class="product-list"> #}
+{#        <!-- 左侧图文 --> #}
+{#        <div class="product-block"> #}
+{#            <div class="top_text"> #}
+{#                <div class="title02"><em>最新</em>製品</div> #}
+{#                <p>永久ライセンス、ネット最安値</p> #}
+{#            </div> #}
+{#            <div class="product_cen"> #}
+{#                <ul> #}
+{#          <!- -#}
+{#                    {% set cateGory1Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([1]) %} #}
+{#                    {% for product in cateGory1Products %} #}
+{#                        {% if index < 2 %} #}
+{#                            <li> #}
+{#                                <div class="product_img"> #}
+{#                                    {% if product.ProductImage|length > 0 %} #}
+{#                                        <img src="{{ asset(product.ProductImage[0], 'save_image') }}"> #}
+{#                                    {% else %} #}
+{#                                        <img src="{{ asset(''|no_image_product, 'save_image') }}"/> #}
+{#                                    {% endif %} #}
+{#                                </div> #}
+{#                                <div class="product-item"> #}
+{#                                    <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="{{product.name}}">{{product.name}}</a> #}
+{#                                    <div class="price">価格：<b>{{product.getPrice01IncTaxMin|price }}</b> #}
+{#                                        <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
+{#                        {% endif %} #}
+{#                    {% endfor %} #}
+{#                    {% set cateGory2Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([7]) %} #}
+{#                    {% for product in cateGory2Products %} #}
+{#                        {% if index < 1 %} #}
+{#                            <li> #}
+{#                                <div class="product_img"> #}
+{#                                    {% if product.ProductImage|length > 0 %} #}
+{#                                        <img src="{{ asset(product.ProductImage[0], 'save_image') }}"> #}
+{#                                    {% else %} #}
+{#                                        <img src="{{ asset(''|no_image_product, 'save_image') }}"/> #}
+{#                                    {% endif %} #}
+{#                                </div> #}
+{#                                <div class="product-item"> #}
+{#                                    <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="{{product.name}}">{{product.name}}</a> #}
+{#                                    <div class="price">価格：<b>{{product.getPrice01IncTaxMin|price }}</b> #}
+{#                                        <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
+{#                        {% endif %} #}
+{#                    {% endfor %} #}
+{#            --> #}
+{#                    #}
+{#                       <li> #}
+{#                             <div class="product_img"> #}
+{#                                   <img src="/html/template/default/assets/img/2.png"> #}
+{#                                 </div> #}
+{#                                <div class="product-item"> #}
+{#                                    <a href="/products/detail/9" target="_blank" title="Microsoft Office Professional Plus 2021 ダウンロード版  | Windows 10/11 PC 1台用 |"> #}
+{#                     Microsoft Office Professional Plus 2021 ダウンロード版  | Windows 10/11 PC 1台用 | #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥12,000</b> #}
+{#                                        <div class="pur_but"><a href="/products/detail/9">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                         </li> #}
 
-			  <li>
-                             <div class="product_img">
-                                   <img src="/html/template/default/assets/img/1.png">
-                                 </div>
-                                <div class="product-item">
-                                    <a href="/products/detail/10" target="_blank" title="Microsoft Office Home and Business 2021 For Mac  ダウンロード版 | Mac 1台 |">
-				     Microsoft Office Home and Business 2021 For Mac  ダウンロード版 | Mac 1台 |
-				    </a>
-                                    <div class="price">価格：<b>￥12,500</b>
-                                        <div class="pur_but"><a href="/products/detail/10">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                         </li>
-
-
-
-			 <li>
-                                <div class="product_img">
-                              <img src="/html/template/default/assets/img/3.png">
-                                </div>
-                               <div class="product-item">
-                                    <a href="/products/detail/3" target="_blank" title="Microsoft Office Professional Plus 2019 ダウンロード版 | Windows PC 1台用 |">
-				    Microsoft Office Professional Plus 2019 ダウンロード版 | Windows PC 1台用 |
-				    </a>
-                                    <div class="price">価格：<b>￥10,000</b>
-                                        <div class="pur_but"><a href="/products/detail/3">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
+{#              <li> #}
+{#                             <div class="product_img"> #}
+{#                                   <img src="/html/template/default/assets/img/1.png"> #}
+{#                                 </div> #}
+{#                                <div class="product-item"> #}
+{#                                    <a href="/products/detail/10" target="_blank" title="Microsoft Office Home and Business 2021 For Mac  ダウンロード版 | Mac 1台 |"> #}
+{#                     Microsoft Office Home and Business 2021 For Mac  ダウンロード版 | Mac 1台 | #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥12,500</b> #}
+{#                                        <div class="pur_but"><a href="/products/detail/10">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                         </li> #}
 
 
-			     <li>
-                                <div class="product_img">
-                              <img src="/html/template/default/assets/img/4.png">
-                                </div>
-                               <div class="product-item">
-                                    <a href="/products/detail/8" target="_blank" title="Microsoft Office Home and Business 2019 For Mac ダウンロード版 | Mac 1台 |">
-				    Microsoft Office Home and Business 2019 For Mac ダウンロード版 | Mac 1台 |
-				    </a>
-                                    <div class="price">価格：<b>￥8,000</b>
-                                        <div class="pur_but"><a href="/products/detail/8">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
 
-			     <li>
-                                <div class="product_img">
-                              <img src="/html/template/default/assets/img/5.png">
-                                </div>
-                               <div class="product-item">
-                                    <a href="#" target="_blank" title="Microsoft Office 2016 Pro plus[ダウンロード版] (PC2台/1ライセンス)日本語版">
-				    Microsoft Office 2016 Pro plus[ダウンロード版] (PC2台/1ライセンス)日本語版
-				    </a>
-                                    <div class="price">価格：<b>￥10,000</b>
-                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
+{#             <li> #}
+{#                                <div class="product_img"> #}
+{#                              <img src="/html/template/default/assets/img/3.png"> #}
+{#                                </div> #}
+{#                               <div class="product-item"> #}
+{#                                    <a href="/products/detail/3" target="_blank" title="Microsoft Office Professional Plus 2019 ダウンロード版 | Windows PC 1台用 |"> #}
+{#                    Microsoft Office Professional Plus 2019 ダウンロード版 | Windows PC 1台用 | #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥10,000</b> #}
+{#                                        <div class="pur_but"><a href="/products/detail/3">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
 
 
-			     <li>
-                                <div class="product_img">
-                              <img src="/html/template/default/assets/img/6.png">
-                                </div>
-                               <div class="product-item">
-                                    <a href="#" target="_blank" title="Microsoft 365 Apps for enterpriseダウンロード版( PC/Mac15台/1ユーザー)">
-				    Microsoft 365 Apps for enterpriseダウンロード版( PC/Mac15台/1ユーザー)
-				    </a>
-                                    <div class="price">価格：<b>￥9,000</b>
-                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
+{#                 <li> #}
+{#                                <div class="product_img"> #}
+{#                              <img src="/html/template/default/assets/img/4.png"> #}
+{#                                </div> #}
+{#                               <div class="product-item"> #}
+{#                                    <a href="/products/detail/8" target="_blank" title="Microsoft Office Home and Business 2019 For Mac ダウンロード版 | Mac 1台 |"> #}
+{#                    Microsoft Office Home and Business 2019 For Mac ダウンロード版 | Mac 1台 | #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥8,000</b> #}
+{#                                        <div class="pur_but"><a href="/products/detail/8">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
+
+{#                 <li> #}
+{#                                <div class="product_img"> #}
+{#                              <img src="/html/template/default/assets/img/5.png"> #}
+{#                                </div> #}
+{#                               <div class="product-item"> #}
+{#                                    <a href="#" target="_blank" title="Microsoft Office 2016 Pro plus[ダウンロード版] (PC2台/1ライセンス)日本語版"> #}
+{#                    Microsoft Office 2016 Pro plus[ダウンロード版] (PC2台/1ライセンス)日本語版 #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥10,000</b> #}
+{#                                        <div class="pur_but"><a href="#">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
 
 
-			     <li>
-                                <div class="product_img">
-                              <img src="/html/template/default/assets/img/7.png">
-                                </div>
-                               <div class="product-item">
-                                    <a href="#" target="_blank" title="Windows 10 Pro (32bit/64bit ）ダウンロード版|1台|">
-				    Windows 10 Pro (32bit/64bit ）ダウンロード版|1台|
-				    </a>
-                                    <div class="price">価格：<b>￥9,000</b>
-                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
+{#                 <li> #}
+{#                                <div class="product_img"> #}
+{#                              <img src="/html/template/default/assets/img/6.png"> #}
+{#                                </div> #}
+{#                               <div class="product-item"> #}
+{#                                    <a href="#" target="_blank" title="Microsoft 365 Apps for enterpriseダウンロード版( PC/Mac15台/1ユーザー)"> #}
+{#                    Microsoft 365 Apps for enterpriseダウンロード版( PC/Mac15台/1ユーザー) #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥9,000</b> #}
+{#                                        <div class="pur_but"><a href="#">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
 
-			      <li>
-                                <div class="product_img">
-                              <img src="/html/template/default/assets/img/8.png">
-                                </div>
-                               <div class="product-item">
-                                    <a href="#" target="_blank" title="Windows 11 Pro (32bit/64bit ）ダウンロード版|1台|">
-				    Windows 11 Pro (32bit/64bit ）ダウンロード版|1台|
-				    </a>
-                                    <div class="price">価格：<b>￥10,000</b>
-                                        <div class="pur_but"><a href="#">すぐに買う</a></div>
-                                    </div>
-                                </div>
-                            </li>
 
-                    
-                    <!--
-      {% set cateGory3Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([5]) %}
-      {% for product in cateGory3Products %}
-      {% if index < 1 %}
-        <li>
-          <div style="float: left; height:280px;">
-            {% if product.ProductImage|length > 0 %}
-              <img src="{{ asset(product.ProductImage[0], 'save_image') }}">
-            {% else %}
-              <img src="{{ asset(''|no_image_product, 'save_image') }}"/>
-            {% endif %}
-            <div class="sub_img"><img src="{{ asset('assets/my/images/win.png') }}"></div>
-          </div>
-          <div class="product-item">
-            <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">{{product.name}}</a>
-            <div style="line-height: 36px; color: #ED7424;">価格：<b>{{product.getPrice01IncTaxMin|price }}</b>
-              <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div>
-            </div>
-          </div>
-        </li>
-      {% endif %}
-      {% endfor %}
-      -->
-                </ul>
-            </div>
-        </div>
+{#                 <li> #}
+{#                                <div class="product_img"> #}
+{#                              <img src="/html/template/default/assets/img/7.png"> #}
+{#                                </div> #}
+{#                               <div class="product-item"> #}
+{#                                    <a href="#" target="_blank" title="Windows 10 Pro (32bit/64bit ）ダウンロード版|1台|"> #}
+{#                    Windows 10 Pro (32bit/64bit ）ダウンロード版|1台| #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥9,000</b> #}
+{#                                        <div class="pur_but"><a href="#">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
 
-        <!-- 右侧列表 -->
-        <div class="right-part">
-{#            <div class="pic-and-gradient"><a href="post/lists?size=10&index=1" target="_blank"><img src="{{ asset('assets/my/images/4.png') }}"></a>#}
-{#            </div>#}
-            <div class="notice-list">
-                <div class="notice-title">お知らせ
-                   
+{#                  <li> #}
+{#                                <div class="product_img"> #}
+{#                              <img src="/html/template/default/assets/img/8.png"> #}
+{#                                </div> #}
+{#                               <div class="product-item"> #}
+{#                                    <a href="#" target="_blank" title="Windows 11 Pro (32bit/64bit ）ダウンロード版|1台|"> #}
+{#                    Windows 11 Pro (32bit/64bit ）ダウンロード版|1台| #}
+{#                    </a> #}
+{#                                    <div class="price">価格：<b>￥10,000</b> #}
+{#                                        <div class="pur_but"><a href="#">すぐに買う</a></div> #}
+{#                                    </div> #}
+{#                                </div> #}
+{#                            </li> #}
+
+{#                    #}
+{#                    <!- -#}
+{#      {% set cateGory3Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([5]) %} #}
+{#      {% for product in cateGory3Products %} #}
+{#      {% if index < 1 %} #}
+{#        <li> #}
+{#          <div style="float: left; height:280px;"> #}
+{#            {% if product.ProductImage|length > 0 %} #}
+{#              <img src="{{ asset(product.ProductImage[0], 'save_image') }}"> #}
+{#            {% else %} #}
+{#              <img src="{{ asset(''|no_image_product, 'save_image') }}"/> #}
+{#            {% endif %} #}
+{#            <div class="sub_img"><img src="{{ asset('assets/my/images/win.png') }}"></div> #}
+{#          </div> #}
+{#          <div class="product-item"> #}
+{#            <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">{{product.name}}</a> #}
+{#            <div style="line-height: 36px; color: #ED7424;">価格：<b>{{product.getPrice01IncTaxMin|price }}</b> #}
+{#              <div class="pur_but"><a href="{{ url('product_detail', {'id': product.id}) }}">すぐに買う</a></div> #}
+{#            </div> #}
+{#          </div> #}
+{#        </li> #}
+{#      {% endif %} #}
+{#      {% endfor %} #}
+{#      --> #}
+{#                </ul> #}
+{#            </div> #}
+{#        </div> #}
+
+{#        <!-- 右侧列表 --> #}
+{#        <div class="right-part"> #}
+{#            <div class="pic-and-gradient"><a href="post/lists?size=10&index=1" target="_blank"><img src="{{ asset('assets/my/images/4.png') }}"></a> #}
+{#            </div> #}
+{#            <div class="notice-list"> #}
+{#                <div class="notice-title">お知らせ #}
+{#                   #}
+{#                </div> #}
+{#                <ul class="ty-pic-txt"> #}
+{#            {% set posts = getNotices(5) %} #}
+{#                    {% for post in posts %} #}
+{#                      <li> #}
+{#                        <a href="{{ url('notice_detail', {'id': post.ID}) }}" title="{{post.post_title}}" target="_blank"> #}
+{#             {{post.post_title}} #}
+{#            </a> #}
+{#                        <span>{{post.post_date}}</span> #}
+{#                       #}
+{#                    </li> #}
+{#             {% endfor %} #}
+{#        #}
+
+{#                </ul> #}
+
+{#            </div> #}
+
+{#            <div class="post-list"> #}
+{#                <div class="post-title">注意事項</div> #}
+{#                <ul class="ty-pic-txt"> #}
+
+{#                    <li> #}
+{#                        <a href="post/detail/153" title="Microsoft Office 2019 Pro plus をダウンロード・インストールする" target="_blank">Microsoft Office 2019 Pro plus をダウンロード・インストールする</a> #}
+{#                        <!-- <span>{{post.post_date}}</span>--> #}
+{#                    </li> #}
+{#                    <li> #}
+{#                        <a href="post/detail/108" title="Windows10 のインストーラーをダウンロードしてインストールする方法" target="_blank"> #}
+{#                            Windows10 のインストーラーをダウンロードしてインストールする方法</a> #}
+{#                        <!-- <span>{{post.post_date}}</span>--> #}
+{#                    </li> #}
+{#                    <li> #}
+{#                        <a href="post/detail/312" title="Office Home & Business 2019のインストール方法（Windows/Mac）" target="_blank">Office Home & Business 2019のインストール方法（Windows/Mac）</a> #}
+{#                        <!-- <span>{{post.post_date}}</span>--> #}
+{#                    </li> #}
+{#                    <li> #}
+{#                        <a href="post/detail/275" title="Word で「 応答なし 」エラーが頻発する原因と対応方法" target="_blank">Word で「 応答なし 」エラーが頻発する原因と対応方法</a> #}
+{#                        <!-- <span>{{post.post_date}}</span>--> #}
+{#                    </li> #}
+
+{#                </ul> #}
+
+{#            </div> #}
+{#        </div> #}
+{#    </div> #}
+{#  <!-- 下方查看更多 #}
+{#  <div class="but_more"><a href="post/lists?size=10&index=1">もっと見る</a></div>--> #}
+{# </div> #}
+<section class="section">
+    {#    <div class="bg section-bg fill bg-fill bg-loaded"></div> #}
+    <div class="section-content relative">
+        <div class="row row-small align-equal">
+            <div class="col small-12 large-12 small-col-first">
+                <div class="col-inner">
+                    <div class="container section-title-container" style="margin-bottom:0px;">
+                        <h4 class="section-title section-title-normal">
+                            <span class="section-title-main">HOT SELL</span>
+                            <a href="#" target="">More<i class="icon-angle-right"></i></a>
+                        </h4>
+                    </div>
                 </div>
-                <ul class="ty-pic-txt">
-		    {% set posts = getNotices(5) %}
-                    {% for post in posts %}
-                      <li>
-                        <a href="{{ url('notice_detail', {'id': post.ID}) }}" title="{{post.post_title}}" target="_blank">
-			 {{post.post_title}}
-			</a>
-                        <span>{{post.post_date}}</span>
-                       
-                    </li>
-		     {% endfor %}
-		
-
-                </ul>
-
             </div>
+            <div class="col medium-4 small-12 large-3 hot-sell" data-animate="fadeInLeft" data-animated="true">
+                <div class="col-inner text-left dark" style="background-color:rgb(56, 138, 203);">
+                    <h3>Microsoft keys</h3>
+                    <p><span style="font-size: 90%;">Get key of Windows 10 / 11 Pro &amp; Office 2016 2019 2021 Professional Fast Delivery by Email .</span>
+                    </p>
+                    <a href="https://digitalwebwiki.com/product-category/microsoft/" target="_self"
+                       class="button white expand" style="border-radius:99px;">
+                        <span>Shop all</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col medium-8 small-12 large-9 small-col-first">
+                <div class="col-inner">
+                    <div class="row large-columns-3 medium-columns-2 small-columns-1 row-collapse slider row-slider slider-nav-simple slider-nav-push flickity-enabled"
+                         data-flickity-options="{
+                             &quot;imagesLoaded&quot;: true,
+                             &quot;groupCells&quot;: &quot;100%&quot;,
+                             &quot;dragThreshold&quot; : 5,
+                             &quot;cellAlign&quot;: &quot;left&quot;,
+                             &quot;wrapAround&quot;: true,
+                             &quot;prevNextButtons&quot;: true,
+                             &quot;percentPosition&quot;: true,
+                             &quot;pageDots&quot;: false,
+                             &quot;rightToLeft&quot;: false,
+                             &quot;autoPlay&quot; : false
+                             }"
+                         tabindex="0">
+                        <div class="col">
+                            <div class="col-inner">
+                                <div class="badge-container absolute left top z-1">
+                                    <div class="callout badge badge-circle">
+                                        <div class="badge-inner secondary on-sale"><span
+                                                    class="onsale">Sale!</span></div>
+                                    </div>
+                                </div>
+                                <div class="product-small box has-hover box-normal box-text-bottom">
+                                    <div class="box-image">
+                                        <div class="image-cover" style="padding-top:100%;">
+                                            <a href="https://digitalwebwiki.com/product/microsoft-office-2021-pro-plus/"
+                                               aria-label="Microsoft office 2021 pro plus 1 PC Activation Lifetime Activation">
+                                                <img width="300" height="300"
+                                                     src="https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-300x300.jpg"
+                                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                     alt="microsoft office 2021" decoding="async" loading="lazy"
+                                                     srcset="https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-300x300.jpg 300w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-400x400.jpg 400w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-800x800.jpg 800w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-280x280.jpg 280w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-768x768.jpg 768w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-600x600.jpg 600w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-100x100.jpg 100w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021.jpg 1000w"
+                                                     sizes="(max-width: 300px) 100vw, 300px"> </a>
+                                        </div>
+                                        <div class="image-tools top right show-on-hover">
+                                        </div>
+                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                            <a href="?add-to-cart=701" data-quantity="1"
+                                               class="add-to-cart-grid no-padding is-transparent product_type_simple add_to_cart_button ajax_add_to_cart"
+                                               data-product_id="701" data-product_sku=""
+                                               aria-label="Add “Microsoft office 2021 pro plus 1 PC Activation Lifetime Activation” to your cart"
+                                               aria-describedby="" rel="nofollow">
+                                                <div class="cart-icon tooltip is-small" title="Buy Now"><strong>+</strong>
+                                                </div>
+                                            </a> <a class="quick-view quick-view-added" data-prod="701"
+                                                    href="#quick-view">Quick View</a></div>
+                                    </div>
+                                    <div class="box-text text-center"
+                                         style="background-color:rgb(255, 255, 255);">
+                                        <div class="title-wrapper"><p
+                                                    class="name product-title woocommerce-loop-product__title">
+                                                <a href="https://digitalwebwiki.com/product/microsoft-office-2021-pro-plus/"
+                                                   class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Microsoft
+                                                    office 2021 pro plus 1 PC Activation Lifetime Activation</a>
+                                            </p></div>
+                                        <div class="price-wrapper">
+                                            <div class="star-rating" role="img"
+                                                 aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated <strong
+                                                            class="rating">5.00</strong> out of 5</span></div>
+                                            <span class="price"><del aria-hidden="true"><span
+                                                            class="woocommerce-Price-amount amount"><bdi>54,00&nbsp;<span
+                                                                    class="woocommerce-Price-currencySymbol">$</span></bdi></span></del> <ins><span
+                                                            class="woocommerce-Price-amount amount"><bdi>9,87&nbsp;<span
+                                                                    class="woocommerce-Price-currencySymbol">$</span></bdi></span></ins></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-inner">
+                                <div class="badge-container absolute left top z-1">
+                                    <div class="callout badge badge-circle">
+                                        <div class="badge-inner secondary on-sale"><span
+                                                    class="onsale">Sale!</span></div>
+                                    </div>
+                                </div>
+                                <div class="product-small box has-hover box-normal box-text-bottom">
+                                    <div class="box-image">
+                                        <div class="image-cover" style="padding-top:100%;">
+                                            <a href="https://digitalwebwiki.com/product/microsoft-office-2021-pro-plus-windows-11-pro/"
+                                               aria-label="Windows 11 Pro + Office 2021 Pro Plus 1 PC Activation Lifetime">
+                                                <img width="300" height="300"
+                                                     src="https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-300x300.jpg"
+                                                     class="show-on-hover absolute fill hide-for-small back-image"
+                                                     alt="microsoft office 2021" decoding="async" loading="lazy"
+                                                     srcset="https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-300x300.jpg 300w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-400x400.jpg 400w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-800x800.jpg 800w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-280x280.jpg 280w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-768x768.jpg 768w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-600x600.jpg 600w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021-100x100.jpg 100w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2021.jpg 1000w"
+                                                     sizes="(max-width: 300px) 100vw, 300px"><img width="300"
+                                                                                                  height="300"
+                                                                                                  src="https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-300x300.jpg"
+                                                                                                  class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                                                  alt="windows 11 pro + office 2021 pro plus"
+                                                                                                  decoding="async"
+                                                                                                  loading="lazy"
+                                                                                                  srcset="https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-300x300.jpg 300w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-400x400.jpg 400w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-800x800.jpg 800w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-280x280.jpg 280w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-768x768.jpg 768w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-600x600.jpg 600w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus-100x100.jpg 100w, https://digitalwebwiki.com/wp-content/uploads/2022/11/windows-11-pro-office-2021-pro-plus.jpg 1000w"
+                                                                                                  sizes="(max-width: 300px) 100vw, 300px">
+                                            </a>
+                                        </div>
+                                        <div class="image-tools top right show-on-hover">
+                                        </div>
+                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                            <a href="?add-to-cart=745" data-quantity="1"
+                                               class="add-to-cart-grid no-padding is-transparent product_type_simple add_to_cart_button ajax_add_to_cart"
+                                               data-product_id="745" data-product_sku=""
+                                               aria-label="Add “Windows 11 Pro + Office 2021 Pro Plus 1 PC Activation Lifetime” to your cart"
+                                               aria-describedby="" rel="nofollow">
+                                                <div class="cart-icon tooltip is-small" title="Buy Now"><strong>+</strong>
+                                                </div>
+                                            </a> <a class="quick-view quick-view-added" data-prod="745"
+                                                    href="#quick-view">Quick View</a></div>
+                                    </div>
+                                    <div class="box-text text-center"
+                                         style="background-color:rgb(255, 255, 255);">
+                                        <div class="title-wrapper"><p
+                                                    class="name product-title woocommerce-loop-product__title">
+                                                <a href="https://digitalwebwiki.com/product/microsoft-office-2021-pro-plus-windows-11-pro/"
+                                                   class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Windows
+                                                    11 Pro + Office 2021 Pro Plus 1 PC Activation Lifetime</a>
+                                            </p></div>
+                                        <div class="price-wrapper">
+                                            <div class="star-rating" role="img"
+                                                 aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated <strong
+                                                            class="rating">5.00</strong> out of 5</span></div>
+                                            <span class="price"><del aria-hidden="true"><span
+                                                            class="woocommerce-Price-amount amount"><bdi>93,00&nbsp;<span
+                                                                    class="woocommerce-Price-currencySymbol">$</span></bdi></span></del> <ins><span
+                                                            class="woocommerce-Price-amount amount"><bdi>13,99&nbsp;<span
+                                                                    class="woocommerce-Price-currencySymbol">$</span></bdi></span></ins></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-inner">
+                                <div class="badge-container absolute left top z-1">
+                                    <div class="callout badge badge-circle">
+                                        <div class="badge-inner secondary on-sale"><span
+                                                    class="onsale">Sale!</span></div>
+                                    </div>
+                                </div>
+                                <div class="product-small box has-hover box-normal box-text-bottom">
+                                    <div class="box-image">
+                                        <div class="image-cover" style="padding-top:100%;">
+                                            <a href="https://digitalwebwiki.com/product/microsoft-office-2019-pro-plus/"
+                                               aria-label="Microsoft office 2019 pro plus 1 PC Activation Online Lifetime Activation">
+                                                <img width="300" height="300"
+                                                     src="https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-300x300.jpg"
+                                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                     alt="microsoft office 2019" decoding="async" loading="lazy"
+                                                     srcset="https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-300x300.jpg 300w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-400x400.jpg 400w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-800x800.jpg 800w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-280x280.jpg 280w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-768x768.jpg 768w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-600x600.jpg 600w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019-100x100.jpg 100w, https://digitalwebwiki.com/wp-content/uploads/2022/10/microsoft-office-2019.jpg 1000w"
+                                                     sizes="(max-width: 300px) 100vw, 300px"> </a>
+                                        </div>
+                                        <div class="image-tools top right show-on-hover">
+                                        </div>
+                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                            <a href="?add-to-cart=699" data-quantity="1"
+                                               class="add-to-cart-grid no-padding is-transparent product_type_simple add_to_cart_button ajax_add_to_cart"
+                                               data-product_id="699" data-product_sku=""
+                                               aria-label="Add “Microsoft office 2019 pro plus 1 PC Activation Online Lifetime Activation” to your cart"
+                                               aria-describedby="" rel="nofollow">
+                                                <div class="cart-icon tooltip is-small" title="Buy Now"><strong>+</strong>
+                                                </div>
+                                            </a> <a class="quick-view quick-view-added" data-prod="699"
+                                                    href="#quick-view">Quick View</a></div>
+                                    </div>
+                                    <div class="box-text text-center"
+                                         style="background-color:rgb(255, 255, 255);">
+                                        <div class="title-wrapper">
+                                            <p class="name product-title woocommerce-loop-product__title">
+                                                <a href="https://digitalwebwiki.com/product/microsoft-office-2019-pro-plus/"
+                                                   class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Microsoft
+                                                    office 2019 pro plus 1 PC Activation Online Lifetime
+                                                    Activation
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <div class="price-wrapper">
+                                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+                                                <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span>
+                                            </div>
+                                            <span class="price">
+                                                <del aria-hidden="true">
+                                                    <span class="woocommerce-Price-amount amount">
+                                                        <bdi>79,00&nbsp;<span class="woocommerce-Price-currencySymbol">$</span></bdi>
+                                                    </span>
+                                                </del>
+                                                <ins>
+                                                    <span class="woocommerce-Price-amount amount">
+                                                        <bdi>8,97&nbsp;<span class="woocommerce-Price-currencySymbol">$</span></bdi>
+                                                    </span>
+                                                </ins>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="col-1775174131" class="col small-12 large-12">
+                <div class="col-inner text-left dark" style="background-color:rgb(255, 78, 12);">
+                    <div class="row row-collapse" id="row-2120118108">
+                        <div id="col-323257782" class="col medium-12 small-12 large-7">
+                            <div class="col-inner">
+                                <h3>Recommended</h3>
+                                <p>Sign up for Digital Sell website And shop your Product with Good Prix.<br>
+                                    &nbsp;</p>
+                            </div>
+                        </div>
+                        <div id="col-1964344246" class="col hide-for-medium medium-1 small-12 large-1">
+                            <div class="col-inner">
+                            </div>
+                        </div>
+                        <div id="col-406452048" class="col medium-12 small-12 large-4">
+                            <div class="col-inner text-left">
+                                <a href="https://digitalwebwiki.com/my-account/" target="_self"
+                                   class="button white expand" style="border-radius:99px;">
+                                    <span>Sign Up</span>
+                                </a>
+                                <a href="https://digitalwebwiki.com/my-account/" target="_self"
+                                   class="button white is-outline expand" style="border-radius:99px;">
+                                    <span>Log In</span>
+                                </a>
+                            </div>
+                        </div>
+                        <style>
+                            #row-2120118108 > .col > .col-inner {
+                                padding: 10px 0px 0px 0px;
+                            }
 
-            <div class="post-list">
-                <div class="post-title">注意事項</div>
-                <ul class="ty-pic-txt">
+                            @media (min-width: 850px) {
+                                #row-2120118108 > .col > .col-inner {
+                                    padding: 0px 0px 0px 0px;
+                                }
+                            }
+                        </style>
+                    </div>
+                </div>
+                <style>
+                    #col-1775174131 > .col-inner {
+                        padding: 45px 25px 30px 25px;
+                        border-radius: 25px;
+                    }
 
-                    <li>
-                        <a href="post/detail/153" title="Microsoft Office 2019 Pro plus をダウンロード・インストールする" target="_blank">Microsoft Office 2019 Pro plus をダウンロード・インストールする</a>
-                        <!-- <span>{{post.post_date}}</span>-->
-                    </li>
-                    <li>
-                        <a href="post/detail/108" title="Windows10 のインストーラーをダウンロードしてインストールする方法" target="_blank">
-                            Windows10 のインストーラーをダウンロードしてインストールする方法</a>
-                        <!-- <span>{{post.post_date}}</span>-->
-                    </li>
-                    <li>
-                        <a href="post/detail/312" title="Office Home & Business 2019のインストール方法（Windows/Mac）" target="_blank">Office Home & Business 2019のインストール方法（Windows/Mac）</a>
-                        <!-- <span>{{post.post_date}}</span>-->
-                    </li>
-                    <li>
-                        <a href="post/detail/275" title="Word で「 応答なし 」エラーが頻発する原因と対応方法" target="_blank">Word で「 応答なし 」エラーが頻発する原因と対応方法</a>
-                        <!-- <span>{{post.post_date}}</span>-->
-                    </li>
-
-                </ul>
-
+                    @media (min-width: 550px) {
+                        #col-1775174131 > .col-inner {
+                            padding: 45px 75px 20px 75px;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </div>
-  <!-- 下方查看更多
-  <div class="but_more"><a href="post/lists?size=10&index=1">もっと見る</a></div>-->
-</div>
+</section>
 <div class="blog-list">
     <div class="ty-bottom clearfix">
         <div class="top_text">
             <div class="title02"><em>人気</em>BLOG
-               <!--
-		<div class="more-btn">
-                    <a href="post/lists?size=10&index=1">もっと見る
-                        <svg t="1630143367783" class="time-3-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2461" width="16" height="16">
-                            <path d="M758.528 512L384 886.528l-60.330667-60.330667 313.984-314.453333-310.954666-310.912L386.986667 140.501333z"
-                                  p-id="2462" style="fill:#ED7424"></path>
-                        </svg>
-                    </a>
-                </div>
-		-->
+                <!--
+         <div class="more-btn">
+                     <a href="post/lists?size=10&index=1">もっと見る
+                         <svg t="1630143367783" class="time-3-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2461" width="16" height="16">
+                             <path d="M758.528 512L384 886.528l-60.330667-60.330667 313.984-314.453333-310.954666-310.912L386.986667 140.501333z"
+                                   p-id="2462" style="fill:#ED7424"></path>
+                         </svg>
+                     </a>
+                 </div>
+         -->
             </div>
             <p>フリー素材、知識は勝手に学ぶ</p>
 
@@ -291,23 +574,23 @@ file that was distributed with this source code.
                         <li>
                             <a href="{{ url('post_detail', {'id': post.ID}) }}">
                                 <div class="img">
-                                    <img src="{{post.image}}" />
+                                    <img src="{{ post.image }}"/>
                                 </div>
                                 <div class="desc">
-                                    <p class="p-title" style="overflow:hidden;">{{post.title}}</p>
+                                    <p class="p-title" style="overflow:hidden;">{{ post.title }}</p>
 
                                 </div>
                             </a>
                         </li>
                     {% endfor %}
-                   
+
 
                 </ul>
             </div>
             <!--轮播左右箭头-->
-           
+
             <!-- 下方查看更多 -->
-          <div class="but_more"><a href="post/lists?size=10&index=1">もっと見る</a></div>
+            <div class="but_more"><a href="post/lists?size=10&index=1">もっと見る</a></div>
         </div>
     </div>
 </div>

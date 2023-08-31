@@ -257,3 +257,15 @@ html, body {
 .header-button > a:focus {
     color: #fff;
 }
+
+.hot-sell > .text-left {
+
+    padding: 45px 30px 30px 30px;
+    border-radius: 25px;
+}
+
+@media (min-width: 550px) {
+    .hot-sell > .text-left {
+        padding: 45px 30px 0 30px;
+    }
+}
